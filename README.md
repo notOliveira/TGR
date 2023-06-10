@@ -89,12 +89,11 @@
 ```
 
 ## Importante
-- Os requirements.txt estão com alguns problemas, caso dê algum problema, instale manualmente as extensões com problema, já adianto alguns comandos que você pode executar abaixo:
+- Acredito que você pode ter alguns problemas ao instalar algumas dependências, caso dê algum problema, instale manualmente as extensões com problema, já adianto alguns comandos que você pode executar abaixo:
 
     ```
     \TGR\tgr> python -m pip install --upgrade pip
     \TGR\tgr> pip install django
-    \TGR\tgr> pip install django-admin
     \TGR\tgr> pip install django-bootstrap-form
     \TGR\tgr> pip install mysqlclient
 
