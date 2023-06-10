@@ -1,0 +1,43 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<main class="background-jogos-img-main">
+
+    <br><br><br><br><br>
+
+    <div class="jogos-main pt-sans_bold white">
+        <h1>Nossa lista de jogos!</h1>
+        <br>
+
+        <!-- Barra de pesquisa aqui -->
+        <input type="text" class="pt-sans" id="search-bar" onkeyup="search_filter()" placeholder="Pesquise por um jogo...">
+
+        <br>
+
+        <div class="container-list-games">
+            <ul class="list-games pt-sans" id="filter-list">
+                {% for jogo in jogos %}
+                    <li class="marginr-40">
+                        <div class="jogo-li-div li-link-div">
+                            <a class="pt-sans li-link" href="{{ jogo.wiki }}" target="_blank">
+                                <b>{{jogo.title}}</b>
+                                <br>
+                                <p class="white">Gênero: {{jogo.genre}}</p>
+                            </a>
+                            {% if user.is_authenticated %}
+                                        <a class="jogo-link-editar text-white btn btn-outline-secondary" href="{% url 'jogo-editar' jogo.id %}">Editar</a>
+                            {% endif %}
+                            
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <footer class="footer-jogos">
+        <h1 class="white">FOOTER</h1>
+    </footer>
+</main>
+
+{% endblock content %}

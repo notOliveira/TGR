@@ -1,0 +1,11 @@
+Django
+django
+django-admin
+colorama
+djangorestframework
+pyyaml
+requests
+django-cors-headers
+django-bootstrap-form
+mysqlclient
+pillow

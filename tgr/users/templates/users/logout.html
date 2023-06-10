@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<br><br><br><br><br><br>
+
+<div class="ml-4 text-white">
+    <h1>Você saiu</h1>    
+    <div class="border-top pt-3">
+        <a href="{% url 'login' %}"><small class="btn btn-outline-info">Entre novamente!</small></a>
+    </div>
+</div>
+{% endblock content %}

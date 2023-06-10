@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+
+{% load bootstrap %}
+
+{% block content %}
+
+<br><br><br><br><br>
+
+<div class="jogos-main white">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="text-left form-group">
+            <legend class="border-bottom mb-4">Criar</legend>
+                {{ form|bootstrap }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info ml-3" type="submit">Salvar</button>
+            <a class="btn btn-outline-secondary ml-3" href="{% url 'jogos' %}">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
