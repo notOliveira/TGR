@@ -1,39 +1,21 @@
 from django.db import models
-from django.urls import reverse
 
-# Create your models here.
+# Gêneros de jogos
+# https://en.wikipedia.org/wiki/Video_game_genre
 
 GENRES_OPTIONS = [
     (1, 'Action'),
     (2, 'Adventure'),
-    (3, 'RPG'),
-    (4, 'Strategy'),
-    (5, 'Sports'),
-    (6, 'Simulation'),
-    (7, 'Puzzle'),
-    (8, 'Racing'),
-    (9, 'Shooter'),
-    (10, 'Fighting'),
-    (11, 'MOBA'),
-    (12, 'Real-time Strategy'),
-    (13, 'Visual Novel'),
-    (14, 'Terror'),
-    (15, 'Beat \'em up'),
-    (16, 'Platformer'),
-    (17, 'Card game'),
-    (18, 'Board game'),
-    (19, 'Graphic adventure'),
-    (20, 'Stealth'),
-    (21, 'Interactive fiction'),
-    (22, 'Turn-based strategy'),
-    (23, 'Sandbox'),
-    (24, 'Construction game'),
-    (25, 'Roguelike'),
-    (26, 'Metroidvania'),
-    (27, 'Battle royale'),
-    (28, 'Hack and slash'),
-    (29, 'Rhythm game'),
-    (30, 'Educational game'),
+    (3, 'Fighting'),
+    (4, 'Platform'),
+    (5, 'Puzzle'),
+    (6, 'Racing'),
+    (7, 'RPG'),
+    (8, 'Shooter'),
+    (9, 'Simulation'),
+    (10, 'Sports'),
+    (11, 'Strategy'),
+    (12, 'MOBA'),
     ]
 
 PLATFORMS_OPTIONS = [
