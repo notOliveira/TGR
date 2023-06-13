@@ -6,18 +6,35 @@
 
 <br><br><br><br><br><br>
 
-    <div class="jogos-main text-white text-left">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Entrar como administrador</legend>
-                {{ form|bootstrap }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Entrar</button>
-            </div>
-        </form>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible fade show w-50 text-left jogos-main" role="alert">
+            {{ message }}
+            <br>
+            <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <br>
+    {% endfor %}
+{% endif %}
 
-    </div>
+<div class="jogos-main text-white text-left">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Entrar</legend>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nickname</label>
+                    <input type="text" class="form-control" name="nickname">    
+                </div>
+                <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password">
+                </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Entrar</button>
+        </div>
+    </form>
+</div>
 
     {% endblock content %}
