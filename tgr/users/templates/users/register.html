@@ -2,11 +2,21 @@
 
 {% load bootstrap %}
 
+{% comment %} {% load static %} {% endcomment %}
+
 {% block content %}
 
 <br><br><br><br><br><br>
-
-    <div class="jogos-main text-white text-left">
+<div class="autentication-page">
+    {% if form.errors %}
+        <div class="alert alert-danger alert-dismissible fade show w-50 m-auto" role="alert">
+            {{ messages }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+        </div>
+    {% endif %}
+    <br>
+    <div class="w-50 m-auto text-white text-left">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -18,9 +28,9 @@
                 <button class="btn btn-outline-info" type="submit">Criar</button>
             </div>
         </form>
-
-        <a href="{% url 'login' %}">Já tem uma conta?</a>
-
+        <br>
+        <a href="{% url 'login' %}" style="text-decoration:none;">Já tem uma conta?</a>
     </div>
+</div>
 
     {% endblock content %}

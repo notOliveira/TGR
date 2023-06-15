@@ -1,9 +1,27 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 
 def register_user(request):
-    return render(request, 'users/register.html')
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            nickname = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=nickname, password=password)
+            login(request, user)
+            messages.success(request, ("Cadastro efetado com sucesso!"))
+            return redirect('home')
+    else:
+        messages.error(request, ("Ocorreu um erro! Por favor tente novamente."))
+        form = UserCreationForm()
+    return render(
+        request, 'users/register.html', {
+            'form': form
+            }
+        )
 
 def login_user(request):
         if request.method == "POST":
@@ -19,5 +37,5 @@ def login_user(request):
         else:
             return render(request, 'users/login.html', {})
 
-def logout_user(request):
+def logout_user(request):   
         return render(request, 'users/logout.html')

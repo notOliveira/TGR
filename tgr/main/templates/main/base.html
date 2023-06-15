@@ -72,7 +72,7 @@
               <li class="nav-item d-inline-flex px-3 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'sobre' %}">
                   <img src="{% static 'main/media/profile.png'%}" class="icon-navbar">
-                  Perfil
+                  {{ user.username }}
                 </a>
               </li>
 

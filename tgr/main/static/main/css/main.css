@@ -120,14 +120,12 @@ nav-link:visited {
   top:0;
 }
 
-/* Jogos */
+/* Login/Register */
 
-.jogos-main {
-  margin: 0 auto;
-  text-align: center;
-  width: 50%;
-  /*border: 1px solid rgb(21, 212, 225); */
+.autentication-page {
+  
 }
+/* Jogos */
 
 .background-jogos-img-main {
   width: 100vw;
@@ -232,10 +230,6 @@ ul p {
   margin: 0 auto;
   text-align: center;
   width: 50%;
-}
-
-.text-left {
-  text-align: left  ;
 }
 
 /* Demais CSS */
