@@ -12,7 +12,6 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=nickname, password=password)
             login(request, user)
-            messages.success(request, ("Cadastro efetado com sucesso!"))
             return redirect('home')
     else:
         messages.error(request, ("Ocorreu um erro! Por favor tente novamente."))

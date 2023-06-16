@@ -17,16 +17,27 @@
     {% endif %}
     <br>
     <div class="w-50 m-auto text-white text-left">
+        <h2 class="border-bottom mb-4">Criar conta na TGR</h2>
+        <br><br>
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Criar conta na TGR</legend>
-                {{ form|bootstrap}}
-            </fieldset>
+                <legend class="mb-4">Criar conta</legend>
+                <br>
+                <legend class="mb-4">Nickname</legend>
+                {{ form.username }}
+                <br>
+
+                <legend class="mb-4">Senha</legend>
+                {{ form.password1 }}
+                <br>
+
+                <legend class="mb-4">Confirme a senha</legend>
+                {{ form.password2 }}
+            </fieldset>1
             <br>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Criar</button>
-            </div>
+            <br>
+            <button class="btn btn-outline-info" type="submit">Criar</button>
         </form>
         <br>
         <a href="{% url 'login' %}" style="text-decoration:none;">Já tem uma conta?</a>
