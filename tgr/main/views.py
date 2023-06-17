@@ -13,18 +13,6 @@ def home(request):
         "gameWiki": randomQuote.game.wiki
     }    
     return render(request, 'main/home.html', context)
-    
-def sobre(request):
-    return render(request, 'main/sobre.html')
-
-def cardapio(request):
-    return render(request, 'main/cardapio.html')
-
-def contato(request):
-    return render(request, 'main/contato.html')
-
-def eventos(request):
-    return render(request, 'main/eventos.html')
 
 class jogosListView(ListView):
     model = Game

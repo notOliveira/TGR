@@ -2,12 +2,15 @@
 
 {% block content %}
 
-<br><br><br><br><br><br>
+<div class="main-logout">
+    <div class="d-block mx-5 justify-content-center text-white">
 
-<div class="d-block mx-5 justify-content-center text-white">
-    <h1 class='text-white'>Você saiu</h1>
-    <div class="border-top pt-3">
-        <a href="{% url 'login' %}"><small class="btn btn-outline-success">Entre novamente!</small></a>
+        <br><br><br><br><br><br>
+
+        <h1 class='text-white'>Você saiu</h1>
+        <div class="border-top pt-3">
+            <a href="{% url 'login' %}"><small class="btn btn-outline-success">Entre novamente!</small></a>
+        </div>
     </div>
 </div>
 {% endblock content %}

@@ -1,0 +1,7 @@
+.main-login {
+    background: url('../media/main-login.jpg');
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background-size: cover;
+}

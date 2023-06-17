@@ -1,0 +1,9 @@
+.main-logout {
+    background: url('../media/main-logout.jpg');
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+}

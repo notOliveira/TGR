@@ -1,44 +1,49 @@
 {% extends "main/base.html" %}
 
+{% load static %}
+
 {% load bootstrap %}
 
 {% comment %} {% load static %} {% endcomment %}
 
 {% block content %}
 
-<br><br><br><br><br><br>
+    <div class="main-login">
+        <div class="w-50 m-auto text-white text-left">
 
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-danger alert-dismissible fade show w-50 m-auto" role="alert">
-            {{ message }}
+            <br><br><br><br><br><br>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger alert-dismissible fade show w-50 m-auto" role="alert">
+                        {{ message }}
+                        <br>
+                        <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <br>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <h1 class="border-bottom mb-4">Entrar</h1>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nickname</label>
+                            <input type="text" class="form-control" name="nickname">    
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="password">
+                        </div>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Entrar</button>
+                </div>
+            </form>
             <br>
-            <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                <a href="{% url 'register' %}" style="text-decoration:none;">Não tem uma conta?</a>
         </div>
-        <br>
-    {% endfor %}
-{% endif %}
+    </div>
 
-<div class="autentication-page w-50 m-auto text-white text-left">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Entrar</legend>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nickname</label>
-                    <input type="text" class="form-control" name="nickname">    
-                </div>
-                <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" name="password">
-                </div>
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Entrar</button>
-        </div>
-    </form>
-    <br>
-        <a href="{% url 'register' %}" style="text-decoration:none;">Não tem uma conta?</a>
-</div>
-
-    {% endblock content %}
+{% endblock content %}

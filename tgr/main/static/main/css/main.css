@@ -120,17 +120,12 @@ nav-link:visited {
   top:0;
 }
 
-/* Login/Register */
-
-.autentication-page {
-  
-}
 /* Jogos */
 
-.background-jogos-img-main {
+.jogos-main {
   width: 100vw;
   height: 100vh;
-  background: url('../media/jogos-background.jpg');
+  background: url('../media/main-login.jpg');
   background-size: cover;
 }
 

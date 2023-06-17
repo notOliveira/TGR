@@ -1,13 +1,13 @@
 {% extends "main/base.html" %}
 
-{% load bootstrap %}
-
-{% comment %} {% load static %} {% endcomment %}
+{% load static %}
 
 {% block content %}
 
-<br><br><br><br><br><br>
-<div class="autentication-page">
+<div class="main-register">
+    
+    <br><br><br><br><br><br>
+
     {% if form.errors %}
         <div class="alert alert-danger alert-dismissible fade show w-50 m-auto" role="alert">
             {{ messages }}
@@ -23,7 +23,6 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="mb-4">Criar conta</legend>
-                <br>
                 <legend class="mb-4">Nickname</legend>
                 {{ form.username }}
                 <br>
@@ -34,7 +33,7 @@
 
                 <legend class="mb-4">Confirme a senha</legend>
                 {{ form.password2 }}
-            </fieldset>1
+            </fieldset>
             <br>
             <br>
             <button class="btn btn-outline-info" type="submit">Criar</button>
