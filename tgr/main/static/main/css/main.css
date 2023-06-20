@@ -47,7 +47,7 @@ li {
   display: flex;
 }
 
-nav-link:visited {
+.nav-link:visited {
   color: white;
   text-decoration: none;
   width: 100%;

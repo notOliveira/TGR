@@ -10,7 +10,7 @@ def home(request):
     context = {
         "randomQuote": randomQuote,
         "gameTitle": randomQuote.game.title,
-        "gameWiki": randomQuote.game.wiki
+        "gameWiki": randomQuote.game.wiki,
     }    
     return render(request, 'main/home.html', context)
 

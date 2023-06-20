@@ -38,7 +38,14 @@
   color: rgb(35, 234, 0);
 }
 
+.quote a:not(:hover) {
+  transition: 0.3s;
+  text-decoration: none;
+  color: rgb(35, 234, 0);
+}
+
 .quote a:hover {
+  transition: 0.3s;
   text-decoration: none;
   color: rgb(255, 255, 0);
 }

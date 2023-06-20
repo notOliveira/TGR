@@ -1,16 +1,10 @@
 {% extends "main/base.html" %}
-
 {% load static %}
-
 {% load bootstrap %}
-
 {% block content %}
-
     <div class="main-login">
         <div class="w-50 m-auto">
-
             <br><br><br><br><br><br>
-
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-danger alert-dismissible fade show w-50 m-auto" role="alert">
@@ -20,41 +14,32 @@
                     </div>
                 {% endfor %}
             {% endif %}
-
-            <form method="POST" class="mt-5">
+            <form method="POST" class="mt-5 align-middle mx-auto">
                 {% csrf_token %}
-                    <div class="container-login">
-                        <div class="wrap-login100 p-t-30 p-b-50">
-                            <span class="login100-form-title p-b-41">
-                                Entrar
-                            </span>
-                            <form method="POST" class="login100-form validate-form p-b-33 p-t-5">
-                                {% csrf_token %}
-                                <div class="wrap-input100 validate-input">
-                                    <input class="input100" type="text" name="nickname" placeholder="Usuário">
-                                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
-                                </div>
-            
-                                <div class="wrap-input100 validate-input">
-                                    <input class="input100" type="password" name="password" placeholder="Senha">
-                                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
-                                </div>
-
-                                <br>
-
-                                <div class="container-login-form-btn m-t-32 ">
-                                    <button class="login100-form-btn" type="submit">
-                                        Login
-                                    </button>
-                                </div>
-            
-                            </form>
+                <div class="container-login">
+                    <div class="wrap-login100 p-t-30 p-b-50">
+                        <span class="login100-form-title p-b-41">
+                            Entrar
+                        </span> 
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="text" name="nickname" placeholder="Usuário">
+                            <span class="focus-input100" data-placeholder="&#xe82a;"></span>
                         </div>
-                    </div>    
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="password" name="password" placeholder="Senha">
+                            <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        </div>
+                        <br>
+                        <div class="container-login-form-btn m-t-32 ">
+                            <button class="login100-form-btn" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
             <br>
-                <a href="{% url 'register' %}" style="text-decoration:none;font-size:20px;">Não tem uma conta?</a>
+            <a href="{% url 'register' %}" style="text-decoration:none;font-size:20px;">Não tem uma conta?</a>
         </div>
     </div>
-
 {% endblock content %}

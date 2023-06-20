@@ -1,5 +1,5 @@
 .main-logout {
-    background: url('../media/main-logout.jpg');
+    background-color: black;
     width: 100vw;
     height: 100vh;
     align-items: center;
@@ -13,7 +13,7 @@
   }
   
 .replay-button {
-    margin-bottom:7vh;
+    margin-bottom: 13vh;
     max-width: 550px;
     box-shadow: 0px 0px 75px 10px rgba(94, 255, 0, 0.9);
 }

@@ -40,6 +40,5 @@ def login_user(request):
 
 def logout_user(request):
     context = {
-        "footer": True
     }
     return render(request, 'users/logout.html', context)
