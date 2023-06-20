@@ -36,5 +36,8 @@ def login_user(request):
         else:
             return render(request, 'users/login.html', {})
 
-def logout_user(request):   
-        return render(request, 'users/logout.html')
+def logout_user(request):
+    context = {
+        "footer": True
+    }
+    return render(request, 'users/logout.html', context)
