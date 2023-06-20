@@ -4,8 +4,6 @@
 
 {% load bootstrap %}
 
-{% comment %} {% load static %} {% endcomment %}
-
 {% block content %}
 
     <div class="main-login">
@@ -26,23 +24,43 @@
 
             <form method="POST">
                 {% csrf_token %}
-                <fieldset class="form-group">
-                    <h1 class="border-bottom mb-4">Entrar</h1>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nickname</label>
-                            <input type="text" class="form-control" name="nickname">    
+                <div class="limiter">
+                    <div class="container-login100">
+                        <div class="wrap-login100 p-t-30 p-b-50">
+                            <span class="login100-form-title p-b-41">
+                                Entrar
+                            </span>
+                            <form method="POST" class="login100-form validate-form p-b-33 p-t-5">
+                                {% csrf_token %}
+                                <div class="wrap-input100 validate-input">
+                                    <input class="input100" type="text" name="nickname" placeholder="Username">
+                                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                                </div>
+            
+                                <div class="wrap-input100 validate-input">
+                                    <input class="input100" type="password" name="password" placeholder="Password">
+                                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                                </div>
+
+                                <br>
+
+                                <div class="container-login100-form-btn m-t-32">
+                                    <button class="login100-form-btn" type="submit">
+                                        Login
+                                    </button>
+                                </div>
+            
+                            </form>
                         </div>
-                        <div class="mb-3">
-                        <label class="form-label">Senha</label>
-                        <input type="password" class="form-control" name="password">
-                        </div>
-                </fieldset>
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Entrar</button>
+                    </div>
                 </div>
+                
+            
+                <div id="dropDownSelect1"></div>
+        
             </form>
             <br>
-                <a href="{% url 'register' %}" style="text-decoration:none;">Não tem uma conta?</a>
+                <a href="{% url 'register' %}" style="text-decoration:none;font-size:20px;">Não tem uma conta?</a>
         </div>
     </div>
 

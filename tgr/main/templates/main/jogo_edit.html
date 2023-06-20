@@ -1,8 +1,8 @@
 {% extends "main/base.html" %}
 
-{% load bootstrap %}
-
 {% load static %}
+
+{% load bootstrap %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
 <div class="jogos-main white">
     <form method="POST">
         {% csrf_token %}
-        <fieldset class="text-left form-group">
+        <fieldset class="text-left form-group mx-5">
             <legend class="border-bottom mb-4">Editar jogo</legend>
                 {{ form|bootstrap }}
         </fieldset>

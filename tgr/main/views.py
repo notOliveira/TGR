@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+# from .forms import GameForm
 from .models import Game, Quote, Genre, Platform
 
 def home(request):
@@ -25,13 +25,14 @@ class jogosListView(ListView):
 class jogosCreateView(LoginRequiredMixin, CreateView):
     model = Game
     template_name = 'main/jogo_form.html'
-    fields = ['title', 'genre', 'platform', 'synopsis', 'players', 'connectivity', 'wiki']
+    fields = '__all__'
 
 class jogoUpdateView(LoginRequiredMixin, UpdateView):
     model = Game
     template_name = 'main/jogo_edit.html'
+    success_url = '/'
     fields = '__all__'
-    success_url = ''
+    # form_class = GameForm
 
 class jogoDeleteView(LoginRequiredMixin, DeleteView):
     model = Game
