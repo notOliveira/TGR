@@ -20,7 +20,7 @@ function search_filter() {
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    const imageElement = document.getElementById('hover-img');
+    const imageElement = document.getElementById('start-hover-img');
 
     if (imageElement) {
         const originalSrc = imageElement.src;

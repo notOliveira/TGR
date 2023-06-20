@@ -13,14 +13,15 @@ def register_user(request):
             user = authenticate(username=nickname, password=password)
             login(request, user)
             return redirect('home')
+        else:
+            messages.error(request, "Ocorreu um erro! Por favor tente novamente.")
     else:
-        messages.error(request, ("Ocorreu um erro! Por favor tente novamente."))
         form = UserCreationForm()
     return render(
         request, 'users/register.html', {
             'form': form
-            }
-        )
+        }
+    )
 
 def login_user(request):
         if request.method == "POST":
@@ -31,9 +32,10 @@ def login_user(request):
                 login(request, user)
                 return redirect('home')
             else:
-                messages.error(request, ("Ocorreu um erro! Por favor tente novamente."))
+                messages.error(request, "Ocorreu um erro! Por favor tente novamente.")
                 return redirect('login')
         else:
+            messages.error(request, '')
             return render(request, 'users/login.html', {})
 
 def logout_user(request):

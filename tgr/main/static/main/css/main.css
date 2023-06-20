@@ -25,6 +25,11 @@ body {
   src: url("../fonts/Mont-Light.otf");
 }
 
+@font-face {
+  font-family: Pixeled;
+  src: url("../fonts/Pixeled.ttf");
+}
+
 .icon-navbar {
   width: 31px;
   height: 31px;
@@ -52,15 +57,6 @@ nav-link:visited {
   background-color:rgba(0, 0, 0, 0.8);
 }
 
-.footer-jogos {
-  position: absolute;
-  bottom:0;
-  padding-left:20px;
-  height:10%;
-  width:100vw;
-  background-color:rgba(0, 0, 0, 0.5); 
-}
-
 .logo-tgr {
   width: 250px;
   margin-left: 0;
@@ -85,6 +81,10 @@ nav-link:visited {
 
 .pt-sans {
   font-family: PT-Sans;
+}
+
+.pixeled {
+  font-family: Pixeled;
 }
 
 .white {
@@ -119,148 +119,3 @@ nav-link:visited {
   transform: rotate(45deg);
   top:0;
 }
-
-/* Jogos */
-
-.jogos-main {
-  width: 100vw;
-  height: 100vh;
-  background: url('../media/main-login.jpg');
-  background-size: cover;
-}
-
-.search {
-  display: inline;
-  width: 100%;
-  border: 5px solid #ddd;
-}
-
-#search-bar {
-  background-image: url(../media/search.png);
-  background-size: 30px;
-  background-position: 15px 10px;
-  padding: 0px 0px 0px 65px;
-  background-repeat: no-repeat;
-  font-size: 15pt;
-  width: 100%;
-  height: 50px;
-  border-radius: 20px 20px 0 0;
-  transition: 0.2s;
-}
-
-#search-bar:hover {
-  border-radius: 20px 20px 20px 20px;
-  margin-bottom: 25px;
-
-}
-
-.container-list-games {
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow-x: hidden;
-  height: auto;
-  max-height: 50vh;
-  color: rgb(0, 0, 0);
-  padding-bottom: 1px;
-  margin-bottom: 5px;
-  border-radius: 0 0 20px 20px;
-}
-
-.jogo-link-editar {
-  margin-top: -20px;
-  width: auto;
-  font-size: 15pt;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.jogo-link-editar:hover {
-  transform:scale(1.1);
-  text-decoration: none;
-}
-
-.marginr-40 {
-  margin-right: 40px;
-}
-
-.li-link-div {
-  width: 100%;
-  display: block;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(222, 222, 222);
-  transition: 0.2s;
-}
-
-.li-link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-a:hover {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-.li-link-div:hover {
-  transform: scale(1.1);
-  background-color: rgb(171, 171, 171);
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-ul {
-  width: 100%;
-  list-style-type: none;
-  font-size: 22pt;
-  color: white;
-}
-
-ul p {
-  font-size: 15pt;
-}
-
-/* Criar jogo */
-
-.criarjogos-main {
-  margin: 0 auto;
-  text-align: center;
-  width: 50%;
-}
-
-/* Demais CSS */
-
-/* Hamb */
-
-.hamb{
-  cursor: pointer;
-  float: right;
-  padding: 40px 20px;
-}/* Style label tag */
-
-.hamb-line {
-  background: var(--white);
-  display: block;
-  height: 2px;
-  position: relative;
-  width: 24px;
-
-} /* Style span tag */
-
-.hamb-line::before,
-.hamb-line::after{
-  background: var(--white);
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-.hamb-line::before{
-  top: 5px;
-}
-.hamb-line::after{
-  top: -5px;
-}
-
-

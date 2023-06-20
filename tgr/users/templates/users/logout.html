@@ -1,15 +1,14 @@
 {% extends "main/base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div class="main-logout">
+    <br><br><br><br><br><br>
     <div class="d-block mx-5 justify-content-center text-white">
-
-        <br><br><br><br><br><br>
-
-        <h1 class='text-white'>Você saiu</h1>
-        <div class="border-top pt-3">
-            <a href="{% url 'login' %}"><small class="btn btn-outline-success">Entre novamente!</small></a>
+        <div class="replay-logout fixed-bottom">
+            <a href="{% url 'login' %}">
+                <img class="replay-button" src="{% static 'main/media/replay.png'%}" id="replay-hover-img">
+            </a>
         </div>
     </div>
 </div>
