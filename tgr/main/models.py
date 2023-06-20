@@ -26,14 +26,14 @@ PLATFORMS_OPTIONS = [
     (5,'All')
     ]
     
-NUM_PLAYERS = [
+PLAYERS_OPTIONS = [
     (1,'Single player'),
     (2,'Multiplayer'),
     (3,'Both'),
     (4,'Better with friends!')
     ]
     
-ON_OFF_BOTH = [
+CONNECTIVITY_OPTIONS = [
     (1,'Offline'),
     (2,'Online'),
     (3,'Both')
@@ -44,29 +44,17 @@ class Genre(models.Model):
 
 class Platform(models.Model):
     name = models.IntegerField(choices=PLATFORMS_OPTIONS)
-
-class Players(models.Model):
-    name = models.IntegerField(choices=NUM_PLAYERS)
-
-class Connectivity(models.Model):
-    name = models.IntegerField(choices=ON_OFF_BOTH)
     
 class Game(models.Model):    
     title = models.CharField(max_length=100)
     genres = models.ManyToManyField(Genre)
     platforms = models.ManyToManyField(Platform)
-    players = models.ManyToManyField(Players)
-    synopsis = models.CharField(max_length=300, default='')
-    connectivity = models.ManyToManyField(Connectivity)
+    players = models.IntegerField(choices=PLAYERS_OPTIONS, default=1)
+    synopsis = models.TextField()
+    connectivity = models.IntegerField(choices=CONNECTIVITY_OPTIONS, default=1)
     wiki = models.URLField()
 
 class Quote(models.Model):
     phrase = models.CharField(max_length=300)
     author = models.CharField(max_length=50)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
-
-class Quiz(models.Model):
-    genres = models.ManyToManyField(Genre)
-    platforms = models.ManyToManyField(Platform)
-    players = models.ManyToManyField(Players)
-    connectivity = models.ManyToManyField(Connectivity)

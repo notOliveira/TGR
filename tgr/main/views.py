@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Game, Quote, Genre, Players, Platform, Connectivity
+from .models import Game, Quote, Genre, Platform
 
 def home(request):
     randomQuote = Quote.objects.order_by('?').first()
@@ -30,7 +30,8 @@ class jogosCreateView(LoginRequiredMixin, CreateView):
 class jogoUpdateView(LoginRequiredMixin, UpdateView):
     model = Game
     template_name = 'main/jogo_edit.html'
-    fields = ['title', 'genre', 'platform', 'synopsis', 'players', 'connectivity', 'wiki']
+    fields = '__all__'
+    success_url = ''
 
 class jogoDeleteView(LoginRequiredMixin, DeleteView):
     model = Game

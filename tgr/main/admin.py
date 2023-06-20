@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Game, Quote, Genre, Players, Platform, Connectivity
+from .models import Game, Quote, Genre, Platform
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
@@ -8,23 +8,11 @@ class GameAdmin(admin.ModelAdmin):
         "title",
         "get_genres_name",
         "get_platforms_name",
-        "get_players_name",
-        "get_connectivity_name",
+        "players",
+        "connectivity",
         ]
     
     # Mostrando no Django Admin os campos que cada objeto tem
-    
-    # Connectivity
-    def get_connectivity_name(self, obj):
-        return ", ".join([connectivity.get_name_display() for connectivity in obj.connectivity.all()])
-
-    get_connectivity_name.short_description = "Connectivity"
-    
-    # Players
-    def get_players_name(self, obj):
-        return ", ".join([players.get_name_display() for players in obj.players.all()])
-
-    get_players_name.short_description = "Players"
     
     # Platforms
     def get_platforms_name(self, obj):
@@ -51,14 +39,7 @@ class QuoteAdmin(admin.ModelAdmin):
 class GenreAdmin(admin.ModelAdmin):    
     list_display = ["id", "name"]
 
-@admin.register(Players)
-class PlayersAdmin(admin.ModelAdmin):    
-    list_display = ["id", "name"]
 
 @admin.register(Platform)
 class PlatformAdmin(admin.ModelAdmin):    
-    list_display = ["id", "name"]
-
-@admin.register(Connectivity)
-class ConnectivityAdmin(admin.ModelAdmin):    
     list_display = ["id", "name"]
