@@ -11,41 +11,43 @@
             </div>
     {% endif %}
     <br>
-    <div class="w-50 m-auto text-white text-left">
         <form method="POST" class="mt-5">
             {% csrf_token %}
-            <div class="container-login">
-                <div class="wrap-login100 p-t-30 p-b-50">
-                    <span class="login100-form-title p-b-41">
+            <div class="w-50 m-auto text-white container-login">
+                <div class="auth-form-elements">
+                    <span class="auth-form-title">
                         Cadastrar-se
                     </span>
-                    <div class="wrap-input100 validate-input">
+                    <div class="auth-form-field">
                         <input class="input100" type="text" name="username" placeholder="Usuário">
-                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        <span class="auth-form-field-icon" data-placeholder="&#xe82a;"></span>
                     </div>
-                    <div class="wrap-input100 validate-input">
+                    <div class="auth-form-field">
                         <input class="input100" type="text" name="email" placeholder="Email">
-                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        <span class="auth-form-field-icon" data-placeholder="&#xe82a;"></span>
                     </div>
-                    <div class="wrap-input100 validate-input">
+                    <div class="auth-form-field">
                         <input class="input100" type="password" name="password1" placeholder="Senha">
-                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        <span class="auth-form-field-icon" data-placeholder="&#xe80f;"></span>
                     </div>
-                    <div class="wrap-input100 validate-input">
+                    <div class="auth-form-field">
                         <input class="input100" type="password" name="password2" placeholder="Repita a senha">
-                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        <span class="auth-form-field-icon" data-placeholder="&#xe80f;"></span>
                     </div>
                     <br>
-                    <div class="container-login-form-btn m-t-32">
-                        <button class="login100-form-btn" type="submit">
+                    <div class="auth-form-submit-container">
+                        <button class="auth-form-submit" type="submit">
                             Criar conta
                         </button>
                     </div>
+                    <br>
+                    <div class="text-center">
+                        <a href="{% url 'login' %}" class="text-center" style="text-decoration:none;font-size:25px;">Já tem uma conta?</a>
+                    </div>
                 </div>
-            </div>    
+            </div>
+            
         </form>
-        <a href="{% url 'login' %}" style="text-decoration:none;font-size:25px;">Já tem uma conta?</a>
     </div>
-</div>
 
 {% endblock content %}
