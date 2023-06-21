@@ -8,7 +8,10 @@
         <br><br><br><br><br><br>
         <h1>Meu usuário: {{ user.username }}</h1>
         <h1>Meu email: {{ user.email }}</h1>
-        <img src={{ user.profile.image.url }}>
+        <h1>Minha foto de perfil:</h1>
+        <img src={{ user.profile.image.url }} style="eidth:400px;height:400px;border-radius:50%;">
+        <br>
+        <h1>OBS: Tela de perfil em construção!!!</h1>
     </div>
 </div>
 {% endblock content %}
