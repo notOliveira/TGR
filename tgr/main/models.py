@@ -4,18 +4,18 @@ from django.db import models
 # https://en.wikipedia.org/wiki/Video_game_genre
 
 GENRES_OPTIONS = [
-    (1, 'Action'),
-    (2, 'Adventure'),
-    (3, 'Fighting'),
-    (4, 'Platform'),
-    (5, 'Puzzle'),
-    (6, 'Racing'),
+    (1, 'Ação'),
+    (2, 'Aventura'),
+    (3, 'Luta'),
+    (4, 'Plataforma'),
+    (5, 'Quebra-cabeça'),
+    (6, 'Corrida'),
     (7, 'RPG'),
-    (8, 'Shooter'),
-    (9, 'Simulation'),
-    (10, 'Sports'),
-    (11, 'Strategy'),
-    (12, 'MOBA'),
+    (8, 'Tiro'),
+    (9, 'Simulação'),
+    (10, 'Esportes'),
+    (11, 'Estratégia'),
+    (12, 'MOBA')
     ]
 
 PLATFORMS_OPTIONS = [
@@ -29,14 +29,14 @@ PLATFORMS_OPTIONS = [
 PLAYERS_OPTIONS = [
     (1,'Single player'),
     (2,'Multiplayer'),
-    (3,'Both'),
-    (4,'Better with friends!')
+    (3,'Ambos'),
+    (4,'Melhor com amigos!')
     ]
     
 CONNECTIVITY_OPTIONS = [
     (1,'Offline'),
     (2,'Online'),
-    (3,'Both')
+    (3,'Ambos')
     ]
 
 class Genre(models.Model):    

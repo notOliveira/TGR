@@ -14,8 +14,6 @@ def register_user(request):
             user = authenticate(username=nickname, password=password)
             login(request, user)
             return redirect('home')
-        else:
-            messages.error(request, "Ocorreu um erro! Por favor tente novamente.")
     else:
         form = UserCreationForm()
     return render(
