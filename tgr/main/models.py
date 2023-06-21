@@ -27,7 +27,7 @@ PLATFORMS_OPTIONS = [
     ]
     
 PLAYERS_OPTIONS = [
-    (1,'Single player'),
+    (1,'Single-player'),
     (2,'Multiplayer'),
     (3,'Ambos'),
     (4,'Melhor com amigos!')
