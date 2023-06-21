@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load bootstrap %}
+{% block content %}
+
+<div class="main-login">
+    <div class="w-50 m-auto">
+        <br><br><br><br><br><br>
+        <h1>Meu usuário: {{ user.username }}</h1>
+        <h1>Meu email: {{ user.email }}</h1>
+        <img src={{ user.profile.image.url }}>
+    </div>
+</div>
+{% endblock content %}

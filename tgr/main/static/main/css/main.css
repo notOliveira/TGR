@@ -33,6 +33,11 @@ body {
 .icon-navbar {
   width: 31px;
   height: 31px;
+  margin-right: 5px;
+}
+
+.profile-pic-navbar {
+  border-radius: 50%;
 }
 
 .navbar-collapse {

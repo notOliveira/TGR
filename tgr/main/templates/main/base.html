@@ -50,6 +50,12 @@
             <ul class="align-middle">
               <li class="nav-item d-inline-flex px-3 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'home' %}">
+                  <img src="{% static 'main/media/home.png'%}" class="icon-navbar">
+                  Início
+                </a>
+              </li>
+              <li class="nav-item d-inline-flex px-3 align-middle">
+                <a class="text-white nav-link d-inline" href="{% url 'home' %}">
                   <img src="{% static 'main/media/lucky.png'%}" class="icon-navbar">
                   Estou com sorte
                 </a>
@@ -68,16 +74,16 @@
                 </a>
               </li>
               {% else %}
-              <li class="nav-item d-inline-flex px-3 align-middle">
-                <a class="text-white nav-link d-inline" href="{% url 'home' %}">
-                  <img src="{% static 'main/media/profile.png'%}" class="icon-navbar">
-                  {{ user.username }}
-                </a>
-              </li>
               <li class="nav-item d-inline-flex px-3">
                 <a class="text-white nav-link d-inline" href="{% url 'logout' %}">
                   <img src="{% static 'main/media/logout.png'%}" class="icon-navbar">
                   Sair
+                </a>
+              </li>
+              <li class="nav-item d-inline-flex px-3 align-middle">
+                <a class="text-white nav-link d-inline" href="{% url 'profile' %}">
+                  <img src="{{ user.profile.image.url }}" class="icon-navbar profile-pic-navbar">
+                  {{ user.username }}
                 </a>
               </li>
               {% endif %}
