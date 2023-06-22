@@ -23,20 +23,12 @@
                 <span class="auth-form-title">
                     Editar dados do usuário
                 </span> 
-                <div class="auth-form-field">
-                    <input class="auth-form-field-input" type="text" name="nickname" placeholder="Usuário">
-                    <span class="auth-form-field-icon" data-placeholder="&#xe82a;"></span>
-                </div>
-                <div class="auth-form-field">
-                    <input class="auth-form-field-input" type="password" name="password" placeholder="Senha" autocomplete="on">
-                    <span class="auth-form-field-icon" data-placeholder="&#xe80f;"></span>
-                </div>
-
                 <br>
                 {% comment %} CAMPO DO USERNAME {% endcomment %}
                 <div class="user-form-field">
                     <h4>Usuário</h4>
                     {{ user_form.username }}
+                    <span class="user-form-field-icon" data-placeholder="&#xe82a;"></span>
                 </div>
 
                 <br>
@@ -44,6 +36,7 @@
                 <div class="user-form-field">
                     <h4>Email</h4>
                     {{ user_form.email }}
+                    <span class="user-form-field-icon" data-placeholder="&#xe818;"></span>
                 </div>
 
                 <br>

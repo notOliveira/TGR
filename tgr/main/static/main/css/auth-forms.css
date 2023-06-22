@@ -163,7 +163,6 @@
     background: linear-gradient(left, #a445b2, #d41872, #fa4299);
   }
 
-  
 .auth-form-field-input:focus + .auth-form-field-icon::after {
     left: 23px;
     color: #d41872;
