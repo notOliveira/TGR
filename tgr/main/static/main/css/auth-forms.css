@@ -1,0 +1,193 @@
+.auth-form-elements {
+    width: 75%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: transparent;
+  }
+  
+.auth-form-title {
+    font-family: Ubuntu-Bold;
+    font-size: 28px;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+  }
+  
+.auth-form-field {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #ffffff;
+    padding: 25px 0;
+  }
+  
+.auth-form-field input {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+  }
+  
+.auth-form-submit {
+    outline: none !important;
+    border: none;
+    background: transparent;
+    font-family: Ubuntu-Bold;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 42px;
+    border-radius: 21px;
+    background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+    position: relative;
+    z-index: 1;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+.auth-form-submit::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 21px;
+    background-color: #48ff00;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+.auth-form-submit:hover {
+    background-color: transparent;
+  }
+  
+.auth-form-submit:hover:before {
+    opacity: 1;
+  }
+
+.auth-form-submit-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.auth-form-field-input {
+    font-family: Ubuntu-Regular;
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    padding: 0 10px 0 80px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.auth-form-field-icon::after {
+    font-family: Linearicons-Free;
+    font-size: 18px;
+    color: #999999;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+.auth-form-field-input:focus {
+    padding-left: 60px;
+  }
+
+  .auth-form-field-icon {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+.auth-form-field-icon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    background: #d41872;
+    background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+  }
+
+  
+.auth-form-field-input:focus + .auth-form-field-icon::after {
+    left: 23px;
+    color: #d41872;
+  }
+  
+.auth-form-field-input:focus + .auth-form-field-icon::before {
+    width: 100%;
+  }
+  
+.has-val.auth-form-field-input + .auth-form-field-icon::after {
+    left: 23px;
+    color: #d41872;
+  }
+  
+.has-val.auth-form-field-input + .auth-form-field-icon::before {
+    width: 100%;
+  }
+  
+.has-val.auth-form-field-input {
+    padding-left: 60px;
+  }
+
+.auth-form-field-input input {
+    width: 100%;
+    height: 50px;
+}
