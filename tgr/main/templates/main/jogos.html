@@ -27,8 +27,8 @@
                 <br>
                 <p class="white">Gêneros:
                     {% for genre in jogo.genres.all %}
-                        {{ genre.get_name_display }}
-                        {% if not forloop.last %},
+                    {{ genre.get_name_display }}
+                        {% if not forloop.last %}-
                         {% endif %}
                     {% endfor %}
                 </p>

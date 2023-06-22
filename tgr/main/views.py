@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Game, Quote
+from rest_framework import viewsets
+from .serializers import GameSerializer
 # from .forms import GameForm
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -19,3 +21,7 @@ class jogosListView(ListView):
     template_name = 'main/jogos.html'
     context_object_name = 'jogos'
     ordering = ['title']
+
+class GameViewSet(viewsets.ModelViewSet):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer

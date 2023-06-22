@@ -44,7 +44,7 @@ class Genre(models.Model):
 
 class Platform(models.Model):
     name = models.IntegerField(choices=PLATFORMS_OPTIONS)
-    
+
 class Game(models.Model):    
     title = models.CharField(max_length=100)
     genres = models.ManyToManyField(Genre)

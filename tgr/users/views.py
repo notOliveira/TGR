@@ -31,7 +31,7 @@ def login_user(request):
                 login(request, user)
                 return redirect('home')
             else:
-                messages.error(request, "Ocorreu um erro! Por favor tente novamente.")
+                messages.error(request, "Usuário não existe! Por favor tente novamente.")
                 return redirect('login')
         else:
             messages.error(request, '')

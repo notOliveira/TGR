@@ -25,8 +25,13 @@
         <br>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ user_form|bootstrap }}
-            {{ profile_form|bootstrap }}
+            {{ user_form.username }}
+            <br>
+            {{ user_form.email }}
+            <br>
+            <div class="file-input-wrapper">
+                {{ profile_form.image }}
+            </div>
             <br>
             <input type="submit">
         </form>
