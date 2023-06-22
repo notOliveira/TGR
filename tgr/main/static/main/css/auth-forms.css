@@ -112,6 +112,9 @@
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
+.auth-form-field-input:focus {
+  padding-left: 60px;
+}
 
 .auth-form-field-icon::after {
     font-family: Linearicons-Free;
@@ -129,11 +132,7 @@
     transition: all 0.1s;
 }
 
-.auth-form-field-input:focus {
-    padding-left: 60px;
-  }
-
-  .auth-form-field-icon {
+.auth-form-field-icon {
     position: absolute;
     display: block;
     width: 100%;

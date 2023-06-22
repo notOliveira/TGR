@@ -4,7 +4,7 @@
 {% block content %}
 
 
-<div class="main-login">
+<div class="main-profile">
     <br><br><br><br><br><br>
     
     {% if messages %}
@@ -16,25 +16,49 @@
             <br>
         {% endfor %}
     {% endif %}
+    <form method="POST" enctype="multipart/form-data" class="mt-5 align-middle mx-auto">
+        {% csrf_token %}
+        <div class="container-profile">
+            <div class="auth-form-elements">
+                <span class="auth-form-title">
+                    Editar dados do usuário
+                </span> 
+                <div class="auth-form-field">
+                    <input class="auth-form-field-input" type="text" name="nickname" placeholder="Usuário">
+                    <span class="auth-form-field-icon" data-placeholder="&#xe82a;"></span>
+                </div>
+                <div class="auth-form-field">
+                    <input class="auth-form-field-input" type="password" name="password" placeholder="Senha" autocomplete="on">
+                    <span class="auth-form-field-icon" data-placeholder="&#xe80f;"></span>
+                </div>
 
-    <div class="w-50 m-auto">
-        <h1>Meu usuário: {{ user.username }}</h1>
-        <h1>Meu email: {{ user.email }}</h1>
-        <h1>Minha foto de perfil:</h1>
-        <img src={{ user.profile.image.url }} class="rounded-circle" style="eidth:100px;height:100px;">
-        <br>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ user_form.username }}
-            <br>
-            {{ user_form.email }}
-            <br>
-            <div class="file-input-wrapper">
-                {{ profile_form.image }}
+                <br>
+                {% comment %} CAMPO DO USERNAME {% endcomment %}
+                <div class="user-form-field">
+                    <h4>Usuário</h4>
+                    {{ user_form.username }}
+                </div>
+
+                <br>
+                {% comment %} CAMPO DO EMAIL {% endcomment %}
+                <div class="user-form-field">
+                    <h4>Email</h4>
+                    {{ user_form.email }}
+                </div>
+
+                <br>
+                {% comment %} CAMPO DA IMAGEM {% endcomment %}
+                <div class="profile-form-field">
+                    <h4>Foto de perfil</h4>
+                    {{ profile_form.image }}
+                </div>
+                <div class="auth-form-submit-container">
+                    <button class="auth-form-submit" type="submit">
+                        Editar
+                    </button>
+                </div>
             </div>
-            <br>
-            <input type="submit">
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 {% endblock content %}
