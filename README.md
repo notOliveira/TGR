@@ -41,6 +41,14 @@
 
 <br>
 
+## Desativando ambiente virtual
+
+<br>
+
+```
+\TGR> deactivate
+```
+
 ---
 
 <br>
