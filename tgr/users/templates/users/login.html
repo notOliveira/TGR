@@ -1,6 +1,7 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% load bootstrap %}
+{% block title %}Login{% endblock %}
 {% block content %}
     <div class="main-login">
         <div class="w-50 m-auto">
@@ -39,7 +40,7 @@
                         <br>
                         <div class="text-center">
                             <a href="{% url 'register' %}" style="text-decoration:none;font-size:25px;">Não tem uma conta?</a>
-                            <br><br>
+                            <br>
                             <a href="{% url 'reset_password' %}" style="text-decoration:none;font-size:25px;">Esqueceu a senha?</a>
                         </div>
                     </div>
