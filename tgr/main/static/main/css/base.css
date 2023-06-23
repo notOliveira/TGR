@@ -53,6 +53,10 @@ body {
   border-radius: 50%;
 }
 
+.navbar-tgr {
+  justify-content: end;
+}
+
 .navbar-collapse {
   width: 100%;
 }
@@ -61,8 +65,8 @@ body {
   font-size: 18pt;
 }
 
-li {
-  display: flex;
+.navbar-tgr-ul li {
+  display: inline;
 }
 
 .nav-link:visited {
@@ -136,4 +140,143 @@ li {
   display: block;
   transform: rotate(45deg);
   top:0;
+}
+
+@media screen and (max-width: 700px) {
+  .logo-tgr {
+    transition: 0.3s;
+    width: 250px;
+    margin-left: 0;
+    text-decoration: none;
+  }
+
+  .icon-navbar {
+    transition: 0.3s;
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+  }
+
+  .nav-item {
+    transition: 0.3s;
+    font-size: 15pt;
+  }
+
+  .navbar-tgr-ul {
+    transition: 0.3s;
+    display: inline;
+    text-align: left;
+    justify-content:left;
+  } 
+}
+
+@media screen and (max-width: 600px) {
+  .logo-tgr {
+    transition: 0.3s;
+    width: 200px;
+    margin-left: 0;
+    text-decoration: none;
+  }
+
+  .icon-navbar {
+    transition: 0.3s;
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+  }
+
+  .nav-item {
+    transition: 0.3s;
+    font-size: 13pt;
+  }
+
+  .navbar-tgr-ul {
+    transition: 0.3s;
+    display: inline-flex;
+    text-align: left;
+    justify-content:left;
+  } 
+}
+
+@media screen and (max-width: 500px) {
+  .logo-tgr {
+    transition: 0.3s;
+    width: 200px;
+    margin-left: 0;
+    text-decoration: none;
+  }
+
+  .icon-navbar {
+    transition: 0.3s;
+    width: 18px;
+    height: 18px;
+    margin-right: 0;
+  }
+
+  .nav-item {
+    transition: 0.3s;
+    font-size: 11pt;
+  }
+
+  .navbar-tgr-ul {
+    transition: 0.3s;
+    display: inline-flex;
+    text-align: left;
+    justify-content:left;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .logo-tgr {
+    transition: 0.3s;
+    width: 150px;
+    margin-left: 0;
+    text-decoration: none;
+  }
+
+  .icon-navbar {
+    transition: 0.3s;
+    width: 15px;
+    height: 15px;
+    margin-right: 0;
+  }
+
+  .nav-item {
+    transition: 0.3s;
+    font-size: 8pt;
+  }
+
+  .navbar-tgr-ul {
+    transition: 0.3s;
+    display: inline-flex;
+    text-align: left;
+  } 
+}
+
+@media screen and (max-width: 300px) {
+  .logo-tgr {
+    transition: 0.3s;
+    width: 110px;
+    margin-left: 0;
+    text-decoration: none;
+  }
+
+  .icon-navbar {
+    transition: 0.3s;
+    width: 15px;
+    height: 15px;
+    margin-right: 0;
+  }
+
+  .nav-item {
+    transition: 0.3s;
+    font-size: 12pt;
+  }
+
+  .navbar-tgr-ul {
+    transition: 0.3s;
+    display: inline-flex;
+    text-align: left;
+  }
 }
