@@ -5,53 +5,54 @@
 {% block content %}
 <div class="main-profile">
     <br><br><br><br><br><br>
-    
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success alert-dismissible fade show w-50 m-auto" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="w-50 m-auto">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show w-100 mx-auto" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container-profile">
+                <div class="auth-form-elements">
+                    <span class="auth-form-title">
+                        Editar dados do usuário
+                    </span>
+                    <br>
+                    <img src="{{ user.profile.image.url }}" class="rounded-circle profile-picture">
+                    {% comment %} CAMPO DO USERNAME {% endcomment %}
+                    <div class="user-form-field">
+                        <h4>Usuário</h4>
+                        {{ user_form.username }}
+                        <span class="user-form-field-icon" data-placeholder="&#xe82a;"></span>
+                    </div>
+                    {% comment %} CAMPO DO EMAIL {% endcomment %}
+                    <div class="user-form-field">
+                        <h4>Email</h4>
+                        {{ user_form.email }}
+                        <span class="user-form-field-icon" data-placeholder="&#xe818;"></span>
+                        <input type="hidden" name="email" value="{{user.email}}">
+                    </div>
+                    
+                    <br>
+                    {% comment %} CAMPO DA IMAGEM {% endcomment %}
+                    <div class="profile-form-field">
+                        <h4>Foto de perfil</h4>
+                        <div id="upload-pic">
+                            {{ profile_form.image }}
+                        </div>
+                    </div>
+                    <div class="auth-form-submit-container">
+                        <button class="auth-form-submit" type="submit">
+                            Editar
+                        </button>
+                    </div>
+                </div>
             </div>
-            <br>
-        {% endfor %}
-    {% endif %}
-    <form method="POST" enctype="multipart/form-data" class="mt-5 align-middle mx-auto">
-        {% csrf_token %}
-        <div class="container-profile">
-            <div class="auth-form-elements">
-                <span class="auth-form-title">
-                    Editar dados do usuário
-                </span> 
-                <br>
-                {% comment %} CAMPO DO USERNAME {% endcomment %}
-                <div class="user-form-field">
-                    <h4>Usuário</h4>
-                    {{ user_form.username }}
-                    <span class="user-form-field-icon" data-placeholder="&#xe82a;"></span>
-                </div>
-
-                <br>
-                {% comment %} CAMPO DO EMAIL {% endcomment %}
-                <div class="user-form-field">
-                    <h4>Email</h4>
-                    {{ user_form.email }}
-                    <span class="user-form-field-icon" data-placeholder="&#xe818;"></span>
-                </div>
-
-                <br>
-                {% comment %} CAMPO DA IMAGEM {% endcomment %}
-                <div class="profile-form-field">
-                    <h4>Foto de perfil</h4>
-                    {{ profile_form.image }}
-                </div>
-                <div class="auth-form-submit-container">
-                    <button class="auth-form-submit" type="submit">
-                        Editar
-                    </button>
-                </div>
-                <a href="{% url 'reset_password'%}">Resetar senha</a>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 {% endblock content %}
