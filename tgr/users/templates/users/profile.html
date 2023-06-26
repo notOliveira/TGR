@@ -2,6 +2,9 @@
 {% load static %}
 {% load bootstrap %}
 {% block title %}Perfil - {{ user.username }}{% endblock %}
+{% block links %}
+    <script type="text/javascript" src="../static/main/js/profile.js"></script>
+{% endblock %}
 {% block content %}
     <div class="main-profile">
         <br><br><br><br><br><br>
@@ -33,7 +36,11 @@
                     {% comment %} CAMPO DO EMAIL {% endcomment %}
                     <div class="user-form-field">
                         <h4>Email</h4>
+                        {% if user.email %}
                         {{ user_form.email }}
+                        {% else %}
+                        <input type="email" placeholder="Sem email" disabled class="text-muted">
+                        {% endif %}
                         <span class="user-form-field-icon" data-placeholder="&#xe818;"></span>
                         <input type="hidden" name="email" value="{{user.email}}">
                     </div>
@@ -46,6 +53,7 @@
                             {{ profile_form.image }}
                         </div>
                     </div>
+                    <br><br>
                     <div class="auth-form-submit-container">
                         <button class="auth-form-submit" type="submit">
                             Editar

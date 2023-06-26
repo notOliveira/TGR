@@ -18,8 +18,8 @@ def home(request):
 
 class jogosListView(ListView):
     model = Game
-    template_name = 'main/jogos.html'
-    context_object_name = 'jogos'
+    template_name = 'main/games.html'
+    context_object_name = 'games'
     ordering = ['title']
 
 class GameViewSet(viewsets.ModelViewSet):

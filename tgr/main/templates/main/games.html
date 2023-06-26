@@ -1,13 +1,16 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block title %}Jogos{% endblock %}
+{% block links%}
+        <script type="text/javascript" src="../static/main/js/games.js"></script>
+{% endblock links %}
 {% block content %}
 
 <main class="jogos-main">
 
     <br><br><br><br><br><br>
 
-    <div class="mx-auto w-50 text-center pt-sans_bold white">
+    <div class="mx-auto w-50 text-center pt-sans_bold text-white">
         <h1>Nossa lista de jogos!</h1>
         <br>
 
@@ -18,14 +21,14 @@
 
         <div class="container-list-games">
             <ul class="list-games pt-sans" id="filter-list">
-                {% for jogo in jogos %}
+                {% for game in games %}
     <li class="marginr-40">
         <div class="jogo-li-div li-link-div">
-            <a class="pt-sans li-link" href="{{ jogo.wiki }}" target="_blank">
-                <b>{{ jogo.title }}</b>
+            <a class="pt-sans li-link" href="{{ game.wiki }}" target="_blank">
+                <b>{{ game.title }}</b>
                 <br>
                 <p class="white">Gêneros:
-                    {% for genre in jogo.genres.all %}
+                    {% for genre in game.genres.all %}
                     {{ genre.get_name_display }}
                         {% if not forloop.last %}-
                         {% endif %}

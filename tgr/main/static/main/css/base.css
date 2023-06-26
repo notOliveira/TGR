@@ -54,6 +54,7 @@ body {
 }
 
 .navbar-tgr {
+  z-index: 999;
   justify-content: end;
 }
 
