@@ -4,10 +4,14 @@
   height: 100vh;
   color: white;
   background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
 }
   
 .container-login {
-  width: 100%;
+  transition: 0.3s;
+  margin: 0 auto;
+  width: 50%;
   height: 70vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,7 +26,8 @@
   background-position: center;
   background-size: cover;
   position: relative;
-  z-index: 1;  
+  z-index: 10;
+
 }
   
 .container-login::before {
@@ -36,4 +41,41 @@
   left: 0;
   background-color: rgba(0,0,0,0.75);
   border-radius: 50px;
+
+}
+
+@media screen and (max-width:1280px) {
+  .container-login {
+    transition: 0.3s;
+    width: 60%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .container-login {
+    transition: 0.3s;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .container-login {
+    transition: 0.3s;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .container-login {
+    transition: 0.3s;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .container-login {
+    transition: 0.3s;
+    width: 100%;
+  }
 }

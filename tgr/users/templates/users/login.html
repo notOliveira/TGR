@@ -4,18 +4,20 @@
 {% block title %}Login{% endblock %}
 {% block content %}
     <div class="main-login">
-        <div class="w-50 m-auto">
             <br><br><br><br><br><br>
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-danger alert-dismissible fade show w-50 m-auto" role="alert">
-                        {{ message }}
-                        <br>
-                        <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <form method="POST" class="mt-5 align-middle mx-auto">
+            <div class="w-50 m-auto">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-danger alert-dismissible fade show m-auto" role="alert">
+                            {{ message }}
+                            <br>
+                            <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <br>
+            </div>
+            <form method="POST">
                 {% csrf_token %}
                 <div class="container-login">
                     <div class="auth-form-elements">
@@ -38,16 +40,14 @@
                         </div>
                         <br>
                         <br>
-                        <div class="text-center">
-                            <a href="{% url 'register' %}" style="text-decoration:none;font-size:25px;">Não tem uma conta?</a>
+                        <div class="text-center form-links">
+                            <a href="{% url 'register' %}">Não tem uma conta?</a>
                             <br>
-                            <a href="{% url 'reset_password' %}" style="text-decoration:none;font-size:25px;">Esqueceu a senha?</a>
+                            <a href="{% url 'reset_password' %}">Esqueceu a senha?</a>
                         </div>
                     </div>
                 </div>
             </form>
             <br>
-            
-        </div>
     </div>
 {% endblock content %}

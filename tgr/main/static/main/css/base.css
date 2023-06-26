@@ -85,14 +85,6 @@ body {
   text-decoration: none;
 }
 
-.opacity-bg {
-  opacity: 0.2;
-}
-
-.not-opacity{
-  opacity: 1;
-}
-
 .transparency {
   background-color:rgba(0, 0, 0, 0.5);
 }
@@ -109,12 +101,12 @@ body {
   font-family: Pixeled;
 }
 
-.site-header{
+.site-header {
   top: 0;
   width: 100%;
 }
 
-.nav{
+.nav {
   display: block;
   position: sticky;
   overflow: hidden;

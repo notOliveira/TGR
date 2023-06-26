@@ -3,17 +3,18 @@
 {% load bootstrap %}
 {% block title %}Perfil - {{ user.username }}{% endblock %}
 {% block content %}
-<div class="main-profile">
-    <br><br><br><br><br><br>
-    <div class="w-50 m-auto">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-success alert-dismissible fade show w-100 mx-auto" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endfor %}
-        {% endif %}
+    <div class="main-profile">
+        <br><br><br><br><br><br>
+        <div class="w-50 m-auto">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show w-100 mx-auto" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="container-profile">
@@ -54,5 +55,4 @@
             </div>
         </form>
     </div>
-</div>
 {% endblock content %}

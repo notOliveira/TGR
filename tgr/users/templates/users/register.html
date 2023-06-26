@@ -12,9 +12,9 @@
             </div>
     {% endif %}
     <br>
-        <form method="POST" class="mt-5">
+        <form method="POST">
             {% csrf_token %}
-            <div class="w-50 m-auto text-white container-login">
+            <div class="container-login">
                 <div class="auth-form-elements">
                     <span class="auth-form-title">
                         Cadastrar-se
@@ -42,10 +42,10 @@
                         </button>
                     </div>
                     <br>
-                    <div class="text-center">
-                        <a href="{% url 'login' %}" class="text-center" style="text-decoration:none;font-size:25px;">Já tem uma conta?</a>
+                    <div class="text-center form-links">
+                        <a href="{% url 'login' %}">Já tem uma conta?</a>
                         <br>
-                        <a href="{% url 'reset_password' %}" class="text-center" style="text-decoration:none;font-size:25px;">Já tem uma conta e esqueceu a senha?</a>
+                        <a href="{% url 'reset_password' %}">Já tem uma conta e esqueceu a senha?</a>
                     </div>
                 </div>
             </div>
