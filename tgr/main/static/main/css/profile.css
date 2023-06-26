@@ -8,7 +8,24 @@
   color: white;
   background-size: cover;
   background-position: center;
+}
 
+.profile-form-elements {
+  width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.profile-form-title {
+  transition: 0.3s;
+  font-family: Ubuntu-Bold;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
 }
 
 .mt-profile-alert {
@@ -16,6 +33,7 @@
 }
 
 .profile-picture {
+  transition: 0.3s;
   display: flex;
   height: 150px;
   margin: 0 auto;
@@ -123,7 +141,6 @@
     left: 0;
     width: 0;
     height: 1px;
-  
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -183,8 +200,23 @@
       transition: 0.3s;
       width: 80%;
     }
+
+    .profile-form-elements {
+      transition: 0.3s;
+      width: 90%;
+    }
+
+    .profile-picture {
+      transition: 0.3s;
+      height: 75px;
+    }
+
+    .profile-form-title {
+      transition: 0.3s;
+      font-size: 20px;
   }
-  
+}
+
   @media screen and (max-width:500px) {
     .container-profile {
       transition: 0.3s;
@@ -196,5 +228,10 @@
     .container-profile {
       transition: 0.3s;
       width: 100%;
+    }
+
+    .profile-form-elements {
+      transition: 0.3s;
+      width: 98%;
     }
   }

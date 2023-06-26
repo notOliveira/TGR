@@ -23,19 +23,19 @@ def register_user(request):
     )
 
 def login_user(request):
-        if request.method == "POST":
-            nickname = request.POST['nickname']
-            password = request.POST['password']
-            user = authenticate(request, username=nickname, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-            else:
-                messages.error(request, "Usuário não existe! Por favor tente novamente.")
-                return redirect('login')
+    if request.method == "POST":
+        nickname = request.POST['nickname']
+        password = request.POST['password']
+        user = authenticate(request, username=nickname, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
         else:
-            messages.error(request, '')
-            return render(request, 'users/login.html', {})
+            messages.error(request, "Usuário não existe! Por favor tente novamente.")
+            return redirect('login')
+    else:
+        messages.error(request, '')
+        return render(request, 'users/login.html', {})
 
 def logout_user(request):
     context = {

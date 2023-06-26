@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Gêneros de jogos
 # https://en.wikipedia.org/wiki/Video_game_genre

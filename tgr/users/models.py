@@ -7,18 +7,12 @@ class Profile(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     
     def __str__(self):
-        return f'{self.user.username} profile'
+        return f'{self.user.username} - Profile'
     
     # Substituindo método save
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         img = Image.open(self.image.path)
-        
-        # # Redimensionando a imagem
-        # if img.height > 300 or img.width > 300:
-        #     output_size = (300, 300)
-        #     img.thumbnail(output_size)
-        #     img.save(self.image.path)
         
         width, height = img.size  # Get dimensions
 
@@ -47,3 +41,19 @@ class Profile(models.Model):
             img.thumbnail((300, 300))
 
         img.save(self.image.path)
+
+class Quiz(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    q1 = models.IntegerField(default=0)
+    q2 = models.IntegerField(default=0)
+    q3 = models.IntegerField(default=0)
+    q4 = models.IntegerField(default=0)
+    q5 = models.IntegerField(default=0)
+    q6 = models.IntegerField(default=0)
+    q7 = models.IntegerField(default=0)
+    q8 = models.IntegerField(default=0)
+    q9 = models.IntegerField(default=0)
+    q10 = models.IntegerField(default=0)
+    
+    def __str__(self):
+        return f"{self.user.username} - Quiz"
