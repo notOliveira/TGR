@@ -5,14 +5,14 @@
   color: white;
   background-size: cover;
   background-position: center;
-  overflow-y: scroll;
+
 }
 
 .container-login {
   transition: 0.3s;
   margin: 0 auto;
   width: 50%;
-  height: auto;
+  height: 70vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -77,5 +77,13 @@
   .container-login {
     transition: 0.3s;
     width: 100%;
+  }
+}
+
+@media screen and (max-height:630px) {
+  .main-login {
+      transition: 0.3s;
+      overflow-y: scroll;
+      height: auto;
   }
 }
