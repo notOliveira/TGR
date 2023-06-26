@@ -7,12 +7,12 @@
   background-position: center;
   overflow-y: scroll;
 }
-  
+
 .container-login {
   transition: 0.3s;
   margin: 0 auto;
   width: 50%;
-  height: 70vh;
+  height: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
