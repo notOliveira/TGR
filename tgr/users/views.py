@@ -87,11 +87,11 @@ def password_reset_request(request):
                         'username': user.username,
                         'email': user.email,
                         # Mudar para domínio de produção
-                        'domain': '127.0.0.1:8000',
+                        'domain': 'https://notoliveira.pythonanywhere.com',
                         'site_name': 'TGR',
                         'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                         'token': default_token_generator.make_token(user),
-                        'protocol': 'http',
+                        'protocol': 'https',
                     }
                     email = render_to_string(email_template_name, parameters)
                     try:
