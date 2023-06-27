@@ -18,7 +18,9 @@
         </div>
         <br><br><br>    
         <div class="start-home fixed-bottom">
-                <img class="start-button mx-auto" src="{% static 'main/media/start.png'%}" id="start-hover-img">
+                <a href="{% url 'login' %}">
+                        <img class="start-button mx-auto" src="{% static 'main/media/start.png'%}" id="start-hover-img">
+                <a>
         </div>
         
 </main>
