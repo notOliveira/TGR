@@ -25,7 +25,8 @@
     margin-top: 25px;
     background-color: #fff;
     border-radius: 8px;
-    padding: 1.5em;
+    padding-left: 1.5em;
+    padding-top: 1.5em;
     z-index: 42;
     transform: scale(0);
     transition: transform 200ms ease;
