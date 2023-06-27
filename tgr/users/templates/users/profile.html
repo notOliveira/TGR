@@ -12,10 +12,16 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-success alert-dismissible fade show w-100 mx-auto" role="alert">
-                        {{ message }}
+                        <h5>{{ message }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 {% endfor %}
+            {% endif %}
+            {% if user.profile.image.url == '/media/default.jpg' %}
+                    <div class="alert alert-primary alert-dismissible fade show w-100 mx-auto" role="alert">
+                        <h5>Coloque uma foto de perfil!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
             {% endif %}
         </div>
         <form method="POST" enctype="multipart/form-data">
