@@ -87,7 +87,7 @@ def password_reset_request(request):
                         'username': user.username,
                         'email': user.email,
                         # Mudar para domínio de produção
-                        'domain': 'https://notoliveira.pythonanywhere.com',
+                        'domain': 'notoliveira.pythonanywhere.com',
                         'site_name': 'TGR',
                         'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                         'token': default_token_generator.make_token(user),
