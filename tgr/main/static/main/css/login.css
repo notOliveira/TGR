@@ -80,10 +80,22 @@
   }
 }
 
+@media screen and (max-width:991px) {
+  .container-login {
+    transition: 0.3s;
+    margin-top: 4vh;
+  }
+}
+
 @media screen and (max-height:630px) {
   .main-login {
       transition: 0.3s;
       overflow-y: scroll;
       height: auto;
+  }
+
+  .container-login {
+    transition: 0.3s;
+    height: auto;
   }
 }
