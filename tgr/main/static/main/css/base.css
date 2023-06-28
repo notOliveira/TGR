@@ -228,5 +228,66 @@ body {
     height: 15px;
     margin-right: 0;
   }
-
 }
+
+.footer-tgr{
+  width: 100%;
+  position: fixed;
+  bottom:0;
+  background:rgba(0, 0, 0, 0.5);
+  padding:30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+  }
+  
+  .footer-tgr .row{
+  width:100%;
+  margin:1% 0%;
+  padding:2% 0%;
+  color:gray;
+  font-size:0.8em;
+  display: inline;
+  }
+  
+  .footer-tgr .row a{
+  text-decoration:none;
+  color:gray;
+  transition:0.5s;
+  }
+
+  .footer-tgr .row li a {
+    font-size: 25px;
+  }
+  
+  .footer-tgr .row a:hover{
+  color:#fff;
+  }
+  
+  .footer-tgr .row ul{
+  width:100%;
+  }
+  
+  .footer-tgr .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer-tgr .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer-tgr{
+  text-align:left;
+  padding:5%;
+  }
+  .footer-tgr .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer-tgr .row a i{
+  margin:0% 3%;
+  }
+  }

@@ -105,10 +105,30 @@
   </header>
   {% block content %}
   {% endblock %}
-  
   {% if footer %}
-      <footer class="footer-jogos" style="z-index:999;">
-          <h1 class="white">Footer não pronto!</h1>
+
+    <footer>
+      <div class="footer-tgr">
+        <div class="row">
+          <a href="https://www.github.com/notoliveira" target="blank"><i class="fa fa-github"></i></a>
+          <a href="https://www.instagram.com/notoliveira" target="blank"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.twitter.com/notoliveira0" target="blank"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <br><br>
+
+        <div class="row">
+          <ul>
+            <li><a href="{% url 'home' %}">Início</a></li>
+            <li><a href="{% url 'about' %}">Sobre</a></li>
+            <li><a href="/api">API</a></li>
+          </ul>
+        </div>
+      
+      <div class="row">
+      TGR Copyright © 2023
+      </div>
+      </div>
       </footer>
   {% endif %}
 </body>
