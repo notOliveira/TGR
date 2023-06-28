@@ -12,5 +12,6 @@ r.register(r"games", GameViewSet, basename='games-api')
 urlpatterns = [
     path('', views.home, name='home'),
     path('games/', jogosListView.as_view(), name='games'),
+    path('about/', views.about, name='about'),
     path('api/', include(r.urls))
 ]

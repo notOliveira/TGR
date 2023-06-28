@@ -16,6 +16,11 @@ def home(request):
     }    
     return render(request, 'main/home.html', context)
 
+def about(request):  
+    context = {
+    }    
+    return render(request, 'main/about.html', context)
+
 class jogosListView(ListView):
     model = Game
     template_name = 'main/games.html'
