@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Sobre{% endblock title %}
+{% block content %}
+
+<main class="main-about text-white">
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'main/media/main-about.mp4' %}" type="video/mp4">
+    </video>
+        <br><br><br><br><br><br><br><br>
+        <div class="about-container w-100">
+            <h1 class="text-center about-title">Sobre o TGR</h1>
+            <br><br>
+            <div class="d-flex mx-4">
+                <div class="tgr-about">
+                    <img src="{% static 'main/media/logo-white.png' %}" style="width:100%;">
+                </div>
+                <p class="mx-5 about-text">O <b>TGR</b>, que significa The Game Recommender, é justamente o que o nome sugere: um <b>recomendador de jogos!</b><br>Já houve aqueles dias nos quais você estava querendo algo diferente para jogar, mas estava com medo de se decepcionar e acabar perdendo seu tempo? O TGR está aqui para fazer com que isso nunca mais aconteça!</p>
+            </div>
+        </div>
+        
+        
+</main>
+
+{% endblock content %}

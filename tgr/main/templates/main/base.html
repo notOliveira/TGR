@@ -19,6 +19,7 @@
     <!--  Statics  -->
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/about.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/logout.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/profile.css' %}">
@@ -51,39 +52,45 @@
         <div class="navbar-tgr collapse navbar-collapse ml-3 overflow-auto" id="navbarNavAltMarkup">
           <div class="navbar-nav d-flex">
             <ul class="navbar-tgr-ul align-middle">
-              <li class="nav-item d-inline-flex px-3 align-middle">
+              <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'home' %}">
                   <img src="{% static 'main/media/home.png'%}" class="icon-navbar">
                   Início
                 </a>
               </li>
-              <li class="nav-item d-inline-flex px-3 align-middle">
+              <li class="nav-item d-inline-flex px-2 align-middle">
+                <a class="text-white nav-link d-inline" href="{% url 'about' %}">
+                  <img src="{% static 'main/media/about.png'%}" class="icon-navbar">
+                  Sobre
+                </a>
+              </li>
+              <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'games' %}">
                   <img src="{% static 'main/media/lucky.png'%}" class="icon-navbar">
                   Estou com sorte
                 </a>
               </li>
               {% if not user.is_authenticated %}
-              <li class="nav-item d-inline-flex px-3 align-middle">
+              <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'login' %}">
                   <img src="{% static 'main/media/login.png'%}" class="icon-navbar">
                   Login
                 </a>
               </li>
-              <li class="nav-item d-inline-flex px-3 align-middle">
+              <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'register' %}">
                   <img src="{% static 'main/media/sign_up.png'%}" class="icon-navbar">
                   Cadastre-se
                 </a>
               </li>
               {% else %}
-              <li class="nav-item d-inline-flex px-3">
+              <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'logout' %}">
                   <img src="{% static 'main/media/logout.png'%}" class="icon-navbar">
                   Sair
                 </a>
               </li>
-              <li class="nav-item d-inline-flex px-3 align-middle">
+              <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline" href="{% url 'profile' %}">
                   <img src="{{ user.profile.image.url }}" class="icon-navbar profile-pic-navbar">
                   {{ user.username }}
