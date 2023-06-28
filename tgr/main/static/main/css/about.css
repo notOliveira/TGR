@@ -20,6 +20,8 @@
 .about-text {
   font-size: 28px;
   text-align: justify;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .tgr-about {
@@ -42,5 +44,10 @@
   .about-text {
     transition: 0.3s;
     font-size: 20px;
+  }
+
+  .logo-text-about {
+    transition: 0.3s;
+    margin: 5%;
   }
 }
