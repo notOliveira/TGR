@@ -18,6 +18,7 @@ def home(request):
 
 def about(request):  
     context = {
+        'footer': True
     }    
     return render(request, 'main/about.html', context)
 
