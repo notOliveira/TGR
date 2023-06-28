@@ -1,0 +1,46 @@
+.main-home {
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+#myVideo {
+  position: fixed;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.about-title {
+  transition: 0.3s;
+  font-size: 80px;
+}
+
+.about-text {
+  font-size: 28px;
+  text-align: justify;
+}
+
+.tgr-about {
+  width: 100%;
+}
+
+@media screen and (max-width:1280px) {
+  .tgr-about {
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width:700px) {
+  .about-title {
+    transition: 0.3s;
+    font-size: 50px;
+  }
+
+  .about-text {
+    transition: 0.3s;
+    font-size: 20px;
+  }
+}
