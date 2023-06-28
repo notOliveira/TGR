@@ -277,17 +277,21 @@ body {
   margin:0% 1%;
   }
   
-  @media (max-width:720px){
+@media (max-width:1280px){
   .footer-tgr{
-  text-align:left;
-  padding:5%;
+    height: 10%;
+    display: block;
+    overflow: scroll;
+    text-align:left;
+    padding:5%;
   }
   .footer-tgr .row ul li{
-  display:block;
-  margin:10px 0px;
-  text-align:left;
+    display:inline-flex;
+    margin:10px 0px;
+    padding: 2%;
+    text-align:left;
   }
   .footer-tgr .row a i{
-  margin:0% 3%;
+    margin:0% 2%;
   }
-  }
+}
