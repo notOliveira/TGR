@@ -119,7 +119,9 @@
 
         <div class="row-footer">
             <a href="{% url 'home' %}">Início</a>
-            <a href="{% url 'about' %}" >Sobre</a>
+            {% if request.path != '/about/' %}
+              <a href="{% url 'about' %}" >Sobre</a>
+            {% endif %}
             <a href="/api">APIs</a>
         </div>
 
