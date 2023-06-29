@@ -1,0 +1,47 @@
+{% extends "rest_framework/base.html" %}
+
+{% load static %}
+
+{% block title %}TGR - APIs{% endblock %}
+
+{% block links %}
+   <link rel="icon" type="image/x-icon" href="{% static 'main/media/favicon.png' %}">
+{% endblock %}
+
+{% block branding %}
+    <div style="width:100%;">
+         <a class='navbar-brand text-white' style="padding-right:3%" rel="nofollow" href="/api">
+            API Root
+         </a>
+
+         <a class='navbar-brand text-white' style="padding-right:3%" rel="nofollow" href="{% url 'home' %}">
+            Home
+         </a>
+
+         {% if user.is_authenticated %}
+
+         <a class='navbar-brand text-white' style="padding-right:3%" rel="nofollow" href="{% url 'logout' %}">
+            Logout
+         </a>
+
+         <a class='navbar-brand text-white' style="padding-right:3%" rel="nofollow" href="{% url 'profile' %}">
+            {{ user.username }}
+         </a>
+
+         {% else %}
+
+         <a class='navbar-brand text-white' style="padding-right:3%" rel="nofollow" href="{% url 'login' %}">
+            Login
+         </a>
+
+         <a class='navbar-brand text-white' style="padding-right:3%" rel="nofollow" href="{% url 'register' %}">
+            Sign up
+         </a>
+
+      </div>
+      {% endif %}
+{% endblock %}
+
+{% block bootstrap_theme %}
+   <link rel="stylesheet" href="https://bootswatch.com/3/cyborg/bootstrap.css" type="text/css">
+{% endblock %}

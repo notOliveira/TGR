@@ -109,27 +109,30 @@
 
     <footer>
       <div class="footer-tgr">
-        <div class="row">
+        <div class="row-footer">
           <a href="https://www.github.com/notoliveira" target="blank"><i class="fa fa-github"></i></a>
           <a href="https://www.instagram.com/notoliveira" target="blank"><i class="fa fa-instagram"></i></a>
           <a href="https://www.twitter.com/notoliveira0" target="blank"><i class="fa fa-twitter"></i></a>
         </div>
 
-        <br><br>
+        <br>
 
-        <div class="row">
-          <ul>
-            <li><a href="{% url 'home' %}">Início</a></li>
-            <li><a href="{% url 'about' %}">Sobre</a></li>
-            <li><a href="/api">API</a></li>
-          </ul>
+        <div class="row-footer">
+            <a href="{% url 'home' %}">Início</a>
+            {% if request.path != '/about/' %}
+              <a href="{% url 'about' %}" >Sobre</a>
+            {% endif %}
+            <a href="/api">APIs</a>
         </div>
-      
-      <div class="row">
+
+        <br>
+
+        <div class="row-footer">
         TGR Copyright © 2023
+        </div>
+
       </div>
-      </div>
-      </footer>
+    </footer>
   {% endif %}
 </body>
 </html>

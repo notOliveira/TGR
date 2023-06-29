@@ -3,8 +3,7 @@
   width: 100vw;
   height: 100vh;
   color: white;
-  background-size: cover;
-  background-position: center;
+  background-size:cover;
 
 }
 
@@ -53,6 +52,7 @@
 }
 
 @media screen and (max-width:900px) {
+
   .container-login {
     transition: 0.3s;
     width: 70%;
@@ -61,41 +61,24 @@
 
 @media screen and (max-width:700px) {
   .container-login {
-    transition: 0.3s;
     width: 80%;
   }
 }
 
 @media screen and (max-width:500px) {
   .container-login {
-    transition: 0.3s;
     width: 90%;
   }
 }
 
 @media screen and (max-width:400px) {
   .container-login {
-    transition: 0.3s;
     width: 100%;
-  }
-}
-
-@media screen and (max-width:991px) {
-  .container-login {
-    transition: 0.3s;
-    margin-top: 4vh;
   }
 }
 
 @media screen and (max-height:630px) {
   .main-login {
-      transition: 0.3s;
-      overflow-y: scroll;
-      height: auto;
-  }
-
-  .container-login {
-    transition: 0.3s;
     height: auto;
   }
 }

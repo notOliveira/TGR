@@ -32,6 +32,11 @@
   .tgr-about {
     display: none;
   }
+
+  .about-title {
+    transition: 0.3s;
+    font-size: 52px;
+  }
   
 }
 
