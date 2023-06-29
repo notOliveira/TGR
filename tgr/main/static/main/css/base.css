@@ -66,10 +66,6 @@ body {
   width: 100%;
 }
 
-.nav-item {
-  font-size: 18pt;
-}
-
 .navbar-tgr-ul li {
   display: inline;
 }
@@ -86,7 +82,7 @@ body {
 
 .logo-tgr {
   width: 250px;
-  margin-left: 0;
+  margin-left: 5%;
   text-decoration: none;
 }
 
@@ -152,7 +148,7 @@ body {
 
   .nav-item {
     transition: 0.3s;
-    font-size: 15pt;
+    font-size: 15px;
   }
 
   .navbar-tgr-ul {
@@ -177,7 +173,6 @@ body {
     height: 20px;
     margin-right: 0;
   }
-
 
 }
 
@@ -215,18 +210,16 @@ body {
 }
 
 @media screen and (max-width: 300px) {
+
+  .nav-item {
+    transition: 0.3s;
+    font-size: 12px;
+  }
   .logo-tgr {
     transition: 0.3s;
     width: 110px;
-    margin-left: 0;
+    justify-content: left;
     text-decoration: none;
-  }
-
-  .icon-navbar {
-    transition: 0.3s;
-    width: 15px;
-    height: 15px;
-    margin-right: 0;
   }
 }
 

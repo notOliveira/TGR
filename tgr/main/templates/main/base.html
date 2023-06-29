@@ -38,7 +38,7 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top transparency">
       <div class="container-fluid">
-        <a href="{% url 'home' %}" class="navbar-brand px-5"><img src="{% static 'main/media/logo-white.png'%}" class="not-opacity logo-tgr"></a>
+        <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'main/media/logo-white.png'%}" class="not-opacity logo-tgr"></a>
         <button 
         class="navbar-toggler" 
         type="button" 
@@ -53,32 +53,32 @@
           <div class="navbar-nav d-flex">
             <ul class="navbar-tgr-ul align-middle">
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline" href="{% url 'home' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'home' %}">
                   <img src="{% static 'main/media/home.png'%}" class="icon-navbar">
                   Início
                 </a>
               </li>
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline" href="{% url 'about' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'about' %}">
                   <img src="{% static 'main/media/about.png'%}" class="icon-navbar">
                   Sobre
                 </a>
               </li>
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline" href="{% url 'games' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'games' %}">
                   <img src="{% static 'main/media/lucky.png'%}" class="icon-navbar">
                   Estou com sorte
                 </a>
               </li>
               {% if not user.is_authenticated %}
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline" href="{% url 'login' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'login' %}">
                   <img src="{% static 'main/media/login.png'%}" class="icon-navbar">
                   Login
                 </a>
               </li>
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline" href="{% url 'register' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'register' %}">
                   <img src="{% static 'main/media/sign_up.png'%}" class="icon-navbar">
                   Cadastre-se
                 </a>
