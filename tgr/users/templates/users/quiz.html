@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}Quiz{% endblock %}
+{% block links %}
+    <script type="text/javascript" src="../static/main/js/logout.js"></script>
+{% endblock %}
+{% block content %}
+
+<div class="main-quiz">
+    <br><br><br><br><br><br>
+    <form method="POST" class="quiz-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="field-controller">
+                {{ field.label }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <br><br>
+        <button class="auth-form-submit" type="submit">
+            Enviar
+        </button>
+    </form>
+</div>
+{% endblock content %}

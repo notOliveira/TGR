@@ -1,12 +1,3 @@
-@font-face {
-  font-family: Coolvetica;
-  src: url("../fonts/Coolvetica.otf");
-}
-
-.coolvetica {
-  font-family: Coolvetica;
-}
-
 .main-home {
     background: url('../media/tgr-home.jpg');
     width: 100vw;

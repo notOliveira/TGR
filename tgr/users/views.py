@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, ProfileUpdateForm, UsersUpdateForm
+from .forms import UserRegisterForm, ProfileUpdateForm, UsersUpdateForm, QuizForm
+from .models import Quiz
 
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -105,3 +106,18 @@ def password_reset_request(request):
         'password_form': password_form  
     }
     return render(request, 'users/password_reset.html', context)
+
+@login_required
+def quiz(request):
+    quiz, created = Quiz.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        form = QuizForm(request.POST, instance=quiz)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = QuizForm(instance=quiz)
+    context = {
+        'form': form
+    }
+    return render(request, 'users/quiz.html', context)
