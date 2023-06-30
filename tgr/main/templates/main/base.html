@@ -19,6 +19,7 @@
     <!--  Statics  -->
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/quiz.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/about.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/logout.css' %}">
@@ -51,7 +52,7 @@
         </button>
         <div class="navbar-tgr collapse navbar-collapse ml-3 overflow-auto" id="navbarNavAltMarkup">
           <div class="navbar-nav d-flex">
-            <ul class="navbar-tgr-ul align-middle">
+            <ul class="navbar-tgr-ul align-middle coolvetica">
               <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline align-middle" href="{% url 'home' %}">
                   <img src="{% static 'main/media/home.png'%}" class="icon-navbar">
@@ -65,7 +66,7 @@
                 </a>
               </li>
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline align-middle" href="{% url 'games' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'quiz' %}">
                   <img src="{% static 'main/media/lucky.png'%}" class="icon-navbar">
                   Estou com sorte
                 </a>
