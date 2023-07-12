@@ -60,6 +60,10 @@
   z-index: 10;
 }
 
+.message-profile {
+  width: 50%;
+}
+
 .container-profile::before {
     content: "";
     display: block;
@@ -179,9 +183,13 @@
   @media screen and (max-width:1280px) {
     .container-profile {
       transition: 0.3s;
-      width: 60%  ;
+      width: 60%;
       height: auto;
       margin-top: 8vh;
+    }
+
+    .message-profile {
+      width: 60%;
     }
   }
 
@@ -192,14 +200,14 @@
   }
   
   @media screen and (max-width:900px) {
-    .container-profile {
+    .container-profile, .message-profile {
       transition: 0.3s;
       width: 70%;
     }
   }
   
   @media screen and (max-width:700px) {
-    .container-profile {
+    .container-profile, .message-profile {
       transition: 0.3s;
       width: 80%;
     }
@@ -221,14 +229,14 @@
 }
 
   @media screen and (max-width:500px) {
-    .container-profile {
+    .container-profile, .message-profile {
       transition: 0.3s;
       width: 90%;
     }
   }
   
   @media screen and (max-width:400px) {
-    .container-profile {
+    .container-profile, .message-profile {
       transition: 0.3s;
       width: 100%;
     }
