@@ -23,6 +23,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/', user_views.profile, name='profile'),
     path('quiz/', user_views.quiz, name='quiz'),
+    path('pre_quiz/', user_views.pre_quiz, name='pre_quiz'),
     # Views de redefinição de senha
     path('reset_password/', user_views.password_reset_request, name="reset_password"),
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_sent.html'), name="password_reset_done"),

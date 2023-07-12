@@ -26,6 +26,10 @@
   margin-right: 2%;
 }
 
+.about-text a{
+  text-decoration: none;
+}
+
 .tgr-about {
   width: 100%;
 }

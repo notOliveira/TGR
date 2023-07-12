@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/logout.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/pre-quiz.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/register.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/game-list.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
@@ -66,7 +67,7 @@
                 </a>
               </li>
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline align-middle" href="{% url 'quiz' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'pre_quiz' %}">
                   <img src="{% static 'main/media/lucky.png'%}" class="icon-navbar">
                   Estou com sorte
                 </a>
@@ -105,9 +106,11 @@
     </nav>
   </header>
   {% block content %}
+  {% comment %} Conteúdo das páginas {% endcomment %}
   {% endblock %}
-  {% if footer %}
 
+  {% if footer %}
+  {% comment %} Caso o footer seja true no contexto, ele aparecerá ao final da página {% endcomment %}
     <footer>
       <div class="footer-tgr">
         <div class="row-footer">
@@ -122,6 +125,9 @@
             <a href="{% url 'home' %}">Início</a>
             {% if request.path != '/about/' %}
               <a href="{% url 'about' %}" >Sobre</a>
+            {% endif %}
+            {% if request.path != '/pre_quiz/' %}
+              <a href="{% url 'pre_quiz' %}" >Quiz</a>
             {% endif %}
             <a href="/api">APIs</a>
         </div>
