@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}Pré quiz{% endblock %}
+{% block links %}
+    <script type="text/javascript" src="../static/main/js/pre-quiz.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="main-pre-quiz">
+        <br><br><br><br><br><br>
+        <div class="texts-pre-quiz text-center text-white">
+            <h1><b>Como funciona o questionário?</b></h1>
+            <br>
+            <br>
+            <p>
+                Você responderá a uma série de questões rápidas que nos ajudarão a definir os seus gostos. Com base nessas informações, vamos recomendar alguns jogos para que você possa jogar!
+                <br>
+                <br>
+                Nós lhe recomendaremos, inicialmente, apenas três jogos. Mas você pode muito bem refazer o questionário quantas vezes você quiser.
+                <br>
+                <br>
+                Ah, não se preocupe. Suas preferências ficarão salvas e, caso não queira mudá-las, não será necessário preencher o quesionário novamente! Não perca tempo e clique no play para iniciar!
+            </p>
+            <br>
+            <a href="{% url 'quiz' %}">
+                <img class="play-button mx-auto" src="{% static 'main/media/play.png'%}" id="play-hover-img">
+            </a>
+            <br><br><br><br><br><br>
+        </div>
+    </div>
+{% endblock content %}

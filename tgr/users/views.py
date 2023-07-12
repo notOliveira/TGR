@@ -121,3 +121,9 @@ def quiz(request):
         'form': form
     }
     return render(request, 'users/quiz.html', context)
+
+def pre_quiz(request):  
+    context = {
+        'footer': True
+    }    
+    return render(request, 'users/pre_quiz.html', context)
