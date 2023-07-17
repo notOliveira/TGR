@@ -3,6 +3,8 @@
 {% load bootstrap %}
 {% block title %}Perfil - {{ user.username }}{% endblock %}
 {% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/profile.css' %}">
     <script type="text/javascript" src="../static/main/js/profile.js"></script>
 {% endblock %}
 {% block content %}

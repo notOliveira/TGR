@@ -1,6 +1,9 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block title %}Sobre{% endblock title %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/about.css' %}">
+{% endblock links %}
 {% block content %}
 
 <main class="main-about text-white">
@@ -8,7 +11,7 @@
         <source src="{% static 'main/media/main-about.mp4' %}" type="video/mp4">
     </video>
         <br><br><br><br><br><br>
-        <div class="about-container w-100">
+        <div class="about-container">
             <h1 class="text-center about-title">Sobre o TGR</h1>
             <br><br>
             <div class="d-flex logo-text-about">
