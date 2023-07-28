@@ -12,7 +12,7 @@
 .quiz-form {
     margin: 0 auto;
     width: 50%;
-    text-align: left;
+    text-align: center;
 }
 
 .quiz-form input {
@@ -47,3 +47,11 @@
     -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
     box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 }
+
+.section {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }

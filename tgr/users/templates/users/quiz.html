@@ -4,25 +4,102 @@
 {% block title %}Quiz{% endblock %}
 {% block links %}
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'main/css/quiz.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/quiz.css' %}">
+<script type="text/javascript" src="../static/main/js/quiz.js"></script>
 {% endblock %}
 {% block content %}
 
 <div class="main-quiz">
     <br><br><br><br><br><br>
-    <h1>EM CONSTRUÇÃO!</h1>
+    
     <form method="POST" class="quiz-form" enctype="multipart/form-data">
         {% csrf_token %}
-        {% for field in form %}
-            <div class="field-controller">
-                {{ field.label }}
-                {{ field }}
-            </div>
-        {% endfor %}
         <br><br>
-        <button class="auth-form-submit" type="submit">
-            Enviar
-        </button>
-    </form>
+        <section class="section active" id="section1">
+            {{ form.q1.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q1 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section2">
+            {{ form.q2.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q2 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section3">
+            {{ form.q3.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q3 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section4">
+            {{ form.q4.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q4 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section5">
+            {{ form.q5.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q5 }}
+            </div>
+        </section>
+
+        <section class="section" id="section6">
+            {{ form.q6.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q6 }}
+            </div>
+        </section>
+
+        <section class="section" id="section7">
+            {{ form.q7.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q7 }}
+            </div>
+        </section>
+
+        <section class="section" id="section8">
+            {{ form.q8.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q8 }}
+            </div>
+        </section>
+
+        <section class="section" id="section9">
+            {{ form.q9.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q9 }}
+            </div>
+        </section>
+
+        <section class="section" id="section10">
+            {{ form.q10.label }}
+            <br>
+            <div class="field-controller">
+                {{ form.q10 }}
+            </div>
+            <br>
+            <button class="auth-form-submit text-center" type="submit">Enviar</button>
+    </section>
+    <br><br>
+</form>
+<button id="btnPrevious" class="auth-form-submit">Anterior</button>
+<span>&nbsp;&nbsp;</span>
+<button id="btnNext" class="auth-form-submit">Próxima</button>
 </div>
 {% endblock content %}

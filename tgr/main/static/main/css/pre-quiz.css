@@ -54,7 +54,7 @@
     transition: 0.3s;
   }
 
-@media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1920px) {
     .texts-pre-quiz {
         width: 90%;
     }
@@ -68,8 +68,14 @@
     }
 
     .play-button {
+        width: 20%;
+      }
+}
+
+@media screen and (max-width: 1200px) {    
+    .play-button {
         transition: 0.3s;
-        width: 28%;
+        width: 25%;
       }
 }
 
