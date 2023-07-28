@@ -20,7 +20,7 @@
         {% csrf_token %}
         <br><br>
         <section class="section active" id="section1">
-            {{ form.q1.label }}
+            <p class="fs-3">Texto questão 1</p>
             <br>
             <div class="field-controller">
                 {{ form.q1 }}
@@ -28,7 +28,7 @@
         </section>
         
         <section class="section" id="section2">
-            {{ form.q2.label }}
+            <p class="fs-3">Texto questão 2</p>
             <br>
             <div class="field-controller">
                 {{ form.q2 }}
@@ -36,7 +36,7 @@
         </section>
         
         <section class="section" id="section3">
-            {{ form.q3.label }}
+            <p class="fs-3">Texto questão 3</p>
             <br>
             <div class="field-controller">
                 {{ form.q3 }}
@@ -44,7 +44,7 @@
         </section>
         
         <section class="section" id="section4">
-            {{ form.q4.label }}
+            <p class="fs-3">Texto questão 4</p>
             <br>
             <div class="field-controller">
                 {{ form.q4 }}
@@ -52,7 +52,7 @@
         </section>
         
         <section class="section" id="section5">
-            {{ form.q5.label }}
+            <p class="fs-3">Texto questão 5</p>
             <br>
             <div class="field-controller">
                 {{ form.q5 }}
@@ -60,7 +60,7 @@
         </section>
 
         <section class="section" id="section6">
-            {{ form.q6.label }}
+            <p class="fs-3">Texto questão 6</p>
             <br>
             <div class="field-controller">
                 {{ form.q6 }}
@@ -68,7 +68,7 @@
         </section>
 
         <section class="section" id="section7">
-            {{ form.q7.label }}
+            <p class="fs-3">Texto questão 7</p>
             <br>
             <div class="field-controller">
                 {{ form.q7 }}
@@ -76,7 +76,7 @@
         </section>
 
         <section class="section" id="section8">
-            {{ form.q8.label }}
+            <p class="fs-3">Texto questão 8</p>
             <br>
             <div class="field-controller">
                 {{ form.q8 }}
@@ -84,7 +84,7 @@
         </section>
 
         <section class="section" id="section9">
-            {{ form.q9.label }}
+            <p class="fs-3">Texto questão 9</p>
             <br>
             <div class="field-controller">
                 {{ form.q9 }}
@@ -92,18 +92,18 @@
         </section>
 
         <section class="section" id="section10">
-            {{ form.q10.label }}
+            <p class="fs-3">Texto questão 10</p>
             <br>
             <div class="field-controller">
                 {{ form.q10 }}
             </div>
             <br>
-            <button class="auth-form-submit text-center" type="submit">Enviar</button>
+            <button class="auth-form-submit" type="submit">Enviar</button>
     </section>
     <br><br>
 </form>
-<button id="btnPrevious" class="auth-form-submit">Anterior</button>
-<span>&nbsp;&nbsp;</span>
-<button id="btnNext" class="auth-form-submit">Próxima</button>
+        <button id="btnPrevious" class="auth-form-submit">Anterior</button>
+        <button id="btnNext" class="auth-form-submit">Próxima</button>
+</div>
 </div>
 {% endblock content %}
