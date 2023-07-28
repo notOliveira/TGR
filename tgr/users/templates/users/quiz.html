@@ -5,11 +5,15 @@
 {% block links %}
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/quiz.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/about.css' %}">
 <script type="text/javascript" src="../static/main/js/quiz.js"></script>
 {% endblock %}
 {% block content %}
 
-<div class="main-quiz">
+<div class="main-about">
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'main/media/main-quiz.mp4' %}" type="video/mp4">
+    </video>
     <br><br><br><br><br><br>
     
     <form method="POST" class="quiz-form" enctype="multipart/form-data">
