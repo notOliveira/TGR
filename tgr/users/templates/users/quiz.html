@@ -3,25 +3,107 @@
 {% load bootstrap %}
 {% block title %}Quiz{% endblock %}
 {% block links %}
-    <script type="text/javascript" src="../static/main/js/logout.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/quiz.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/about.css' %}">
+<script type="text/javascript" src="../static/main/js/quiz.js"></script>
 {% endblock %}
 {% block content %}
 
-<div class="main-quiz">
+<div class="main-about">
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'main/media/main-quiz.mp4' %}" type="video/mp4">
+    </video>
     <br><br><br><br><br><br>
-    <h1>EM CONSTRUÇÃO!</h1>
+    
     <form method="POST" class="quiz-form" enctype="multipart/form-data">
         {% csrf_token %}
-        {% for field in form %}
-            <div class="field-controller">
-                {{ field.label }}
-                {{ field }}
-            </div>
-        {% endfor %}
         <br><br>
-        <button class="auth-form-submit" type="submit">
-            Enviar
-        </button>
-    </form>
+        <section class="section active" id="section1">
+            <p class="fs-3">Texto questão 1</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q1 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section2">
+            <p class="fs-3">Texto questão 2</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q2 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section3">
+            <p class="fs-3">Texto questão 3</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q3 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section4">
+            <p class="fs-3">Texto questão 4</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q4 }}
+            </div>
+        </section>
+        
+        <section class="section" id="section5">
+            <p class="fs-3">Texto questão 5</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q5 }}
+            </div>
+        </section>
+
+        <section class="section" id="section6">
+            <p class="fs-3">Texto questão 6</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q6 }}
+            </div>
+        </section>
+
+        <section class="section" id="section7">
+            <p class="fs-3">Texto questão 7</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q7 }}
+            </div>
+        </section>
+
+        <section class="section" id="section8">
+            <p class="fs-3">Texto questão 8</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q8 }}
+            </div>
+        </section>
+
+        <section class="section" id="section9">
+            <p class="fs-3">Texto questão 9</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q9 }}
+            </div>
+        </section>
+
+        <section class="section" id="section10">
+            <p class="fs-3">Texto questão 10</p>
+            <br>
+            <div class="field-controller">
+                {{ form.q10 }}
+            </div>
+            <br>
+            <button class="auth-form-submit" type="submit">Enviar</button>
+    </section>
+    <br><br>
+</form>
+        <button id="btnPrevious" class="auth-form-submit">Anterior</button>
+        <button id="btnNext" class="auth-form-submit">Próxima</button>
+</div>
 </div>
 {% endblock content %}

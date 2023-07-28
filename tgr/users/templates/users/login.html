@@ -2,6 +2,10 @@
 {% load static %}
 {% load bootstrap %}
 {% block title %}Login{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
+{% endblock links %}
 {% block content %}
     <div class="main-login">
             <br><br><br><br><br><br>

@@ -1,7 +1,7 @@
 .main-home {
     background: url('../media/tgr-home.jpg');
     width: 100vw;
-    height: auto;
+    height: 100vh;
     align-items: center;
     text-align: center;
     color: white;
