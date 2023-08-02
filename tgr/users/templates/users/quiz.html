@@ -16,11 +16,13 @@
     </video>
     <br><br><br><br><br><br>
     
-    <form method="POST" class="quiz-form" enctype="multipart/form-data">
+    <form method="POST" class="quiz-form w-75 mt-5" enctype="multipart/form-data">
         {% csrf_token %}
         <br><br>
         <section class="section active" id="section1">
-            <p class="fs-3">Texto questão 1</p>
+            <h2>Pergunta 1</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed consequat metus. Praesent at aliquet nisl, quis laoreet dolor. Nunc at aliquet est. Pellentesque nec porta ex. Morbi lobortis felis?</p>
             <br>
             <div class="field-controller">
                 {{ form.q1 }}
@@ -28,7 +30,9 @@
         </section>
         
         <section class="section" id="section2">
-            <p class="fs-3">Texto questão 2</p>
+            <h2>Pergunta 2</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a quam vitae massa faucibus faucibus vitae sit amet diam. Sed eget felis semper, sollicitudin lectus vel, scelerisque ligula. Integer suscipit?</p>
             <br>
             <div class="field-controller">
                 {{ form.q2 }}
@@ -36,7 +40,9 @@
         </section>
         
         <section class="section" id="section3">
-            <p class="fs-3">Texto questão 3</p>
+            <h2>Pergunta 3</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue tortor, pulvinar sit amet justo vitae, gravida euismod lacus. Cras maximus posuere enim vitae blandit. Pellentesque non ornare mauris, ut?</p>
             <br>
             <div class="field-controller">
                 {{ form.q3 }}
@@ -44,7 +50,9 @@
         </section>
         
         <section class="section" id="section4">
-            <p class="fs-3">Texto questão 4</p>
+            <h2>Pergunta 4</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum felis turpis, in convallis mi ullamcorper vitae. Sed placerat bibendum ex. In ut arcu mauris. Sed pulvinar iaculis nisl nec?</p>
             <br>
             <div class="field-controller">
                 {{ form.q4 }}
@@ -52,7 +60,9 @@
         </section>
         
         <section class="section" id="section5">
-            <p class="fs-3">Texto questão 5</p>
+            <h2>Pergunta 5</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu malesuada dui, ac posuere felis. Donec ut posuere urna. Maecenas vitae urna convallis, faucibus nunc ut, volutpat leo. Vestibulum sit?</p>
             <br>
             <div class="field-controller">
                 {{ form.q5 }}
@@ -60,7 +70,9 @@
         </section>
 
         <section class="section" id="section6">
-            <p class="fs-3">Texto questão 6</p>
+            <h2>Pergunta 6</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis rutrum tortor, ut auctor dolor maximus quis. Aenean arcu mauris, maximus nec quam quis, ultricies dignissim leo. Fusce in finibus?</p>
             <br>
             <div class="field-controller">
                 {{ form.q6 }}
@@ -68,7 +80,9 @@
         </section>
 
         <section class="section" id="section7">
-            <p class="fs-3">Texto questão 7</p>
+            <h2>Pergunta 7</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis diam quam, a lobortis leo molestie sit amet. Donec vestibulum justo et urna molestie, id consectetur turpis venenatis. Sed eget?</p>
             <br>
             <div class="field-controller">
                 {{ form.q7 }}
@@ -76,7 +90,9 @@
         </section>
 
         <section class="section" id="section8">
-            <p class="fs-3">Texto questão 8</p>
+            <h2>Pergunta 8</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac viverra neque, in lacinia quam. Vestibulum vel volutpat velit, a aliquam metus. Quisque eu justo dui. Aenean lobortis, ante sit?</p>
             <br>
             <div class="field-controller">
                 {{ form.q8 }}
@@ -84,7 +100,9 @@
         </section>
 
         <section class="section" id="section9">
-            <p class="fs-3">Texto questão 9</p>
+            <h2>Pergunta 9</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium a urna eu ornare. Nunc purus nisi, tempor sit amet urna vel, varius consectetur ipsum. Suspendisse tristique diam ligula, non?</p>
             <br>
             <div class="field-controller">
                 {{ form.q9 }}
@@ -92,18 +110,20 @@
         </section>
 
         <section class="section" id="section10">
-            <p class="fs-3">Texto questão 10</p>
+            <h2>Pergunta 10</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio nibh, venenatis nec elementum a, dapibus a diam. Aenean nec nulla quis nisi interdum commodo a eget massa. Ut pretium?</p>
             <br>
             <div class="field-controller">
                 {{ form.q10 }}
             </div>
             <br>
-            <button class="auth-form-submit" type="submit">Enviar</button>
+            <button class="auth-form-submit" style="width:200px;" type="submit">Enviar</button>
     </section>
     <br><br>
 </form>
-        <button id="btnPrevious" class="auth-form-submit">Anterior</button>
-        <button id="btnNext" class="auth-form-submit">Próxima</button>
+        <button id="btnPrevious" class="paginator-button">Anterior</button>
+        <button id="btnNext" class="paginator-button">Próxima</button>
 </div>
 </div>
 {% endblock content %}
