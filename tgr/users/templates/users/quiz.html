@@ -22,17 +22,91 @@
         <section class="section active" id="section1">
             <h2>Pergunta 1</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed consequat metus. Praesent at aliquet nisl, quis laoreet dolor. Nunc at aliquet est. Pellentesque nec porta ex. Morbi lobortis felis?</p>
+            <p class="fs-3">Em qual plataforma você joga?</p>
             <br>
+            <!-- 
             <div class="field-controller">
                 {{ form.q1 }}
             </div>
+            -->
+            <select name="q1" id="form_q1"class="form-control">
+                <!-- RANDOM -->
+                <option value="random" disabled style="background-color:#e0e0e0;">Aleatório</option>
+                <option value="random">Me surpreenda!</option>
+
+                <!-- PC -->
+                <option value="random" disabled style="background-color:#e0e0e0;">Computadores</option>
+                <option value="pc">PC (Qualquer loja)</option>
+                
+                <!-- CELULAR -->
+                <option value="cel" disabled style="background-color:#e0e0e0;">Celular</option>
+                <option value="cel_android">Android</option>
+                <option value="cel_ios">IOS</option>
+
+                <!-- PLAYSTATION -->
+                <option value="playstation" disabled style="background-color:#e0e0e0;">Playstation</option>
+                <option value="playstation_1">Playstation 1</option>
+                <option value="playstation_2">Playstation 2</option>
+                <option value="playstation_3">Playstation 3</option>
+                <option value="playstation_4">Playstation 4</option>
+                <option value="playstation_5">Playstation 5</option>
+                <option value="playstation_psp">Playstation Portable (PSP)</option>
+                <option value="playstation_vita">Playstation Vita</option>
+                
+                <!-- XBOX -->
+                <option value="xbox" disabled style="background-color:#e0e0e0;">Xbox</option>
+                <option value="xbox_xbox">Xbox</option>
+                <option value="xbox_360">Xbox 360</option>
+                <option value="xbox_one">Xbox One</option>
+                <option value="xbox_x">Xbox Series S/X</option>
+                <option value="xbox_kinect">Kinect</option>
+                
+                <!-- NINTENDO -->
+                <option value="nintendo" disabled style="background-color:#e0e0e0;">Nintendo</option>
+                <option value="nintendo_nes">NES/Famicom</option>
+                <option value="nintendo_super">Super Nintendo</option>
+                <option value="nintendo_gameboy">Gameboy (Color/SP)</option>
+                <option value="nintendo_64">Nintendo 64</option>
+                <option value="nintendo_advance">Gameboy Advance</option>
+                <option value="nintendo_gamecube">Nintendo Gamecube</option>
+                <option value="nintendo_wii">Nintendo Wii</option>
+                <option value="nintendo_ds">Nintendo DS</option>
+                <option value="nintendo_3ds">Nintendo 3DS/2DS</option>
+                <option value="nintendo_wiiu">Nintendo Wii U</option>
+                <option value="nintendo_switch">Nintendo Switch</option>
+                
+                <!-- SEGA -->
+                <option value="sega" disabled style="background-color:#e0e0e0;">Sega</option>
+                <option value="sega_master">Master System</option>
+                <option value="sega_mega">Genesis (Mega Drive)</option>
+                <option value="sega_32x">Sega 32X</option>
+                <option value="sega_saturn">Sega Saturn</option>
+                <option value="sega_dreamcast">Dreamcast</option>
+                <option value="sega_gear">Game Gear</option>
+                
+                <!-- ATARI -->
+                <option value="atari" disabled style="background-color:#e0e0e0;">Atari</option>
+                <option value="atari_2500">Atari 2500</option>
+                <option value="atari_2600">Atari 2600</option>
+                <option value="atari_5200">Atari 5200</option>
+                <option value="atari_7800">Atari 7800</option>
+                <option value="atari_jaguar">Atari Jaguar (CD)</option>
+
+                <!-- SNK -->
+                <option value="snk" disabled style="background-color:#e0e0e0;">SNK</option>
+                <option value="snk_neogeo">NeoGeo (CD)</option>
+                <option value="snk_hyper">Hyper NeoGeo 64</option>
+
+                <!-- HUDSON -->
+                <option value="husdon" disabled style="background-color:#e0e0e0;">Hudson</option>
+                <option value="husdon_turbografx">TurboGrafx-16 (PC-Engine)</option>
+            </select>
         </section>
         
         <section class="section" id="section2">
             <h2>Pergunta 2</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a quam vitae massa faucibus faucibus vitae sit amet diam. Sed eget felis semper, sollicitudin lectus vel, scelerisque ligula. Integer suscipit?</p>
+            <p class="fs-3">Qual gênero de jogo você procura?</p>
             <br>
             <div class="field-controller">
                 {{ form.q2 }}
@@ -42,7 +116,7 @@
         <section class="section" id="section3">
             <h2>Pergunta 3</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue tortor, pulvinar sit amet justo vitae, gravida euismod lacus. Cras maximus posuere enim vitae blandit. Pellentesque non ornare mauris, ut?</p>
+            <p class="fs-3">Qual tipo de jogo você procura?</p>
             <br>
             <div class="field-controller">
                 {{ form.q3 }}
@@ -52,7 +126,7 @@
         <section class="section" id="section4">
             <h2>Pergunta 4</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum felis turpis, in convallis mi ullamcorper vitae. Sed placerat bibendum ex. In ut arcu mauris. Sed pulvinar iaculis nisl nec?</p>
+            <p class="fs-3">Qual nível de dificuldade você deseja?</p>
             <br>
             <div class="field-controller">
                 {{ form.q4 }}
@@ -62,7 +136,7 @@
         <section class="section" id="section5">
             <h2>Pergunta 5</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu malesuada dui, ac posuere felis. Donec ut posuere urna. Maecenas vitae urna convallis, faucibus nunc ut, volutpat leo. Vestibulum sit?</p>
+            <p class="fs-3">Em relação aos gráficos, qual você prefere?</p>
             <br>
             <div class="field-controller">
                 {{ form.q5 }}
@@ -72,7 +146,7 @@
         <section class="section" id="section6">
             <h2>Pergunta 6</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis rutrum tortor, ut auctor dolor maximus quis. Aenean arcu mauris, maximus nec quam quis, ultricies dignissim leo. Fusce in finibus?</p>
+            <p class="fs-3">Qual tipo de câmera/visão?</p>
             <br>
             <div class="field-controller">
                 {{ form.q6 }}
@@ -82,7 +156,7 @@
         <section class="section" id="section7">
             <h2>Pergunta 7</h2>
             <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis diam quam, a lobortis leo molestie sit amet. Donec vestibulum justo et urna molestie, id consectetur turpis venenatis. Sed eget?</p>
+            <p class="fs-3">Sobre dinheiro, o que você pensa em relação ao jogo?</p>
             <br>
             <div class="field-controller">
                 {{ form.q7 }}
