@@ -16,51 +16,271 @@
     </video>
     <br><br><br><br><br><br>
     
-    <form method="POST" class="quiz-form" enctype="multipart/form-data">
+    <form method="POST" class="quiz-form w-75 mt-5" enctype="multipart/form-data">
         {% csrf_token %}
         <br><br>
         <section class="section active" id="section1">
-            <p class="fs-3">Texto questão 1</p>
+            <h2>Pergunta 1</h2>
             <br>
-            <div class="field-controller">
-                {{ form.q1 }}
-            </div>
+            <p class="fs-3">Em qual plataforma você joga?</p>
+            <br>
+            <select name="q1" id="form_q1" class="form-control">
+                <!-- RANDOM -->
+                <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                <option value="random">Me surpreenda!</option>
+
+                <!-- PC -->
+                <option disabled style="background-color:#e0e0e0;">Computadores</option>
+                <option value="pc">PC (Qualquer loja)</option>
+                
+                <!-- CELULAR -->
+                <option disabled style="background-color:#e0e0e0;">Celular</option>
+                <option value="cel_android">Android</option>
+                <option value="cel_ios">IOS</option>
+
+                <!-- PLAYSTATION -->
+                <option disabled style="background-color:#e0e0e0;">Playstation</option>
+                <option value="playstation_1">Playstation 1</option>
+                <option value="playstation_2">Playstation 2</option>
+                <option value="playstation_3">Playstation 3</option>
+                <option value="playstation_4">Playstation 4</option>
+                <option value="playstation_5">Playstation 5</option>
+                <option value="playstation_psp">Playstation Portable (PSP)</option>
+                <option value="playstation_vita">Playstation Vita</option>
+                
+                <!-- XBOX -->
+                <option disabled style="background-color:#e0e0e0;">Xbox</option>
+                <option value="xbox_xbox">Xbox</option>
+                <option value="xbox_360">Xbox 360</option>
+                <option value="xbox_one">Xbox One</option>
+                <option value="xbox_x">Xbox Series S/X</option>
+                <option value="xbox_kinect">Kinect</option>
+                
+                <!-- NINTENDO -->
+                <option disabled style="background-color:#e0e0e0;">Nintendo</option>
+                <option value="nintendo_nes">NES/Famicom</option>
+                <option value="nintendo_super">Super Nintendo</option>
+                <option value="nintendo_gameboy">Gameboy (Color/SP)</option>
+                <option value="nintendo_64">Nintendo 64</option>
+                <option value="nintendo_advance">Gameboy Advance</option>
+                <option value="nintendo_gamecube">Nintendo Gamecube</option>
+                <option value="nintendo_wii">Nintendo Wii</option>
+                <option value="nintendo_ds">Nintendo DS</option>
+                <option value="nintendo_3ds">Nintendo 3DS/2DS</option>
+                <option value="nintendo_wiiu">Nintendo Wii U</option>
+                <option value="nintendo_switch">Nintendo Switch</option>
+                
+                <!-- SEGA -->
+                <option disabled style="background-color:#e0e0e0;">Sega</option>
+                <option value="sega_master">Master System</option>
+                <option value="sega_mega">Genesis (Mega Drive)</option>
+                <option value="sega_32x">Sega 32X</option>
+                <option value="sega_saturn">Sega Saturn</option>
+                <option value="sega_dreamcast">Dreamcast</option>
+                <option value="sega_gear">Game Gear</option>
+                
+                <!-- ATARI -->
+                <option disabled style="background-color:#e0e0e0;">Atari</option>
+                <option value="atari_2500">Atari 2500</option>
+                <option value="atari_2600">Atari 2600</option>
+                <option value="atari_5200">Atari 5200</option>
+                <option value="atari_7800">Atari 7800</option>
+                <option value="atari_jaguar">Atari Jaguar (CD)</option>
+
+                <!-- SNK -->
+                <option disabled style="background-color:#e0e0e0;">SNK</option>
+                <option value="snk_neogeo">NeoGeo (CD)</option>
+                <option value="snk_hyper">Hyper NeoGeo 64</option>
+
+                <!-- HUDSON -->
+                <option disabled style="background-color:#e0e0e0;">Hudson</option>
+                <option value="husdon_turbografx">TurboGrafx-16 (PC-Engine)</option>
+            </select>
         </section>
         
         <section class="section" id="section2">
-            <p class="fs-3">Texto questão 2</p>
+            <h2>Pergunta 2</h2>
             <br>
-            <div class="field-controller">
-                {{ form.q2 }}
-            </div>
+            <p class="fs-3">Qual gênero de jogo você procura?</p>
+            <br>
+            <select name="q2" id="form_q2"class="form-control">
+                <!-- RANDOM -->
+                <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                <option value="random">Me surpreenda!</option>
+
+                <!-- ACTION -->
+                <option disabled style="background-color:#e0e0e0;">Ação</option>
+                <option value="action_beat_em_up">Beat'em Up</option>
+                <option value="action_hack_slash">Hack-and-slash</option>
+                <option value="action_soulslike">Souls-like</option>
+
+                <!-- RPG -->
+                <option disabled style="background-color:#e0e0e0;">RPG</option>
+                <option value="rpg_action">RPG de Ação (Action RPG)</option>
+                <option value="rpg_tatical">RPG Tático (Tactical RPG)</option>
+                <option value="rpg_turn_based">RPG por Turnos (Turn-Based RPG)</option>
+                <option value="rpg_mmorpg">MMORPG</option>
+                
+                <!-- SIMULATION -->
+                <option disabled style="background-color:#e0e0e0;">Simulação</option>
+                <option value="simulation_life">Simulação de Vida (Life Simulation)</option>
+                <option value="simulation_construction">Construção e Gerenciamento (Construction and Management)</option>
+                <option value="simulation_sandbox">Sandbox</option>
+
+                <!-- STRATEGY -->
+                <option disabled style="background-color:#e0e0e0;">Estratégia</option>
+                <option value="strategy_real_time">Estratégia em Tempo Real (Real-Time Strategy)</option>
+                <option value="strategy_turn_based">Estratégia por Turnos (Turn-Based Strategy)</option>
+                <option value="strategy_tower_defense">Tower Defense</option>
+                <option value="strategy_board_games">Jogos de Tabuleiro (Board Games)</option>
+                <option value="strategy_moba">Multiplayer Online Battle Arena (MOBA)</option>
+
+                <!-- FIGHTING -->
+                <option disabled style="background-color:#e0e0e0;">Luta</option>
+                <option value="fighting_2d">2D Fighting</option>
+                <option value="fighting_3d">3D Fighting</option>
+                <option value="fighting_platform">Luta em Plataforma</option>
+
+                <!-- SHOOTER -->
+                <option disabled style="background-color:#e0e0e0;">Shooter</option>
+                <option value="shooter_fps">Tiro em Primeira Pessoa (FPS)</option>
+                <option value="shooter_tps">Tiro em Terceira Pessoa (TPS)</option>
+                <option value="shooter_hero">Hero Shooter</option>
+                <option value="shooter_mmofps">MMOFPS</option>
+
+                <!-- TERROR -->
+                <option disabled style="background-color:#e0e0e0;">Terror</option>
+                <option value="terror_survival">Horror de Sobrevivência (Survival Horror)</option>
+                <option value="terror_psyco">Horror Psicológico (Psychological Horror)</option>
+
+                <option disabled style="background-color:#e0e0e0;">Outros</option>
+
+                <!-- ADVENTURE -->
+                <option value="adventure">Aventura</option>
+
+                <!-- OPEN WORLD -->
+                <option value="open_world">Mundo aberto</option>
+
+                <!-- SPORTS -->
+                <option value="sports">Esportes</option>
+
+                <!-- RACING -->
+                <option value="racing">Corrida</option>
+                <!-- BATTLE ROYALE -->
+                <option value="battle_royale">Battle Royale</option>
+
+                <!-- SURVIVAL -->
+                <option value="survival">Sobrevivência</option>
+
+                <!-- PUZZLE -->
+                <option value="puzzle">Quebra cabeça</option>
+
+                <!-- PLATFORMER -->
+                <option value="platformer">Plataforma (Platformer)</option>
+
+                <!-- METROIDVANIA -->
+                <option value="metroidvania">Metroidvania</option>
+
+                <!-- ROGUELIKE & ROGUELITE -->
+                <option value="rogue">Roguelike & Roguelite</option>
+
+                <!-- ENDLESS RUNNER -->
+                <option value="endless_runner">Corrida infinita</option>
+
+                <!-- MUSIC AND RYTHM -->
+                <option value="music_rythm">Música e Ritmo</option>
+
+                <!-- CARD GAMES -->
+                <option value="card">Jogos de Cartas</option>
+
+                <!-- VISUAL NOVEL -->
+                <option value="visual_novel">Visual Novel</option>
+
+                <!-- CONTEMPLATIVE GAMES -->
+                <option value="contemplative">Jogos Contemplativos</option>
+
+                <!-- EDUCATIONAL GAMES -->
+                <option value="educational">Jogos Educativos</option>
+
+                <!-- NARRATIVE GAMES -->
+                <option value="narrative">Jogos de Narrativa</option>
+
+                <!--SOCIAL GAME -->
+                <option value="social">Social Game</option>                
+            </select>
         </section>
         
         <section class="section" id="section3">
-            <p class="fs-3">Texto questão 3</p>
+            <h2>Pergunta 3</h2>
+            <br>
+            <p class="fs-3">Qual tipo de jogo você procura?</p>
             <br>
             <div class="field-controller">
-                {{ form.q3 }}
+                <select name="q3" id="form_q3"class="form-control">
+                    <!-- RANDOM -->
+                    <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                    <option value="random">Me surpreenda!</option>
+    
+                    <!-- SINGLEPLAYER -->
+                    <option disabled style="background-color:#e0e0e0;">Singleplayer</option>
+                    <option value="single_on">Singleplayer online</option>
+                    <option value="single_off">Singleplayer offline</option>
+
+                    <!-- MULTIPLAYER -->
+                    <option disabled style="background-color:#e0e0e0;">Multiplayer</option>
+                    <option value="multi_on">Multiplayer online</option>
+                    <option value="multi_coop_local">Multiplayer co-op local</option>
+                    <option value="multi_coop_online">Multiplayer co-op online</option>
+                    <option value="multi_service">Live service</option>
+                </select>
             </div>
         </section>
         
         <section class="section" id="section4">
-            <p class="fs-3">Texto questão 4</p>
+            <h2>Pergunta 4</h2>
             <br>
-            <div class="field-controller">
-                {{ form.q4 }}
-            </div>
+            <p class="fs-3">Qual nível de dificuldade você deseja?</p>
+            <br>
+            <select name="q4" id="form_q4"class="form-control">
+                <!-- RANDOM -->
+                <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                <option value="random">Me surpreenda!</option>
+
+                <!-- DIFFICULTY -->
+                <option value="casual">Casual</option>
+                <option value="challenge">Desafiador</option>
+            </select>
         </section>
         
         <section class="section" id="section5">
-            <p class="fs-3">Texto questão 5</p>
+            <h2>Pergunta 5</h2>
             <br>
-            <div class="field-controller">
-                {{ form.q5 }}
-            </div>
+            <p class="fs-3">Em relação aos gráficos, qual você prefere?</p>
+            <br>
+            <select name="q5" id="form_q5" class="form-control">
+                <!-- RANDOM -->
+                <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                <option value="random">Me surpreenda!</option>
+
+                <!-- PIXEL ART -->
+                <option disabled style="background-color:#e0e0e0;">Pixel Art</option>
+                <option value="retro">Retrô</option>
+                <option value="atual">Atual</option>
+                <option value="2d_hd">2D-HD</option>
+                <option value="ladrilho">Ladrilho</option>
+
+                <!-- OUTROS -->
+                <option disabled style="background-color:#e0e0e0;">Outros</option>
+                <option value="cel_shading">Cel Shading</option>
+                <option value="realistic">Realista</option>
+                <option value="voxel">Voxel</option>
+            </select>
         </section>
 
         <section class="section" id="section6">
-            <p class="fs-3">Texto questão 6</p>
+            <h2>Pergunta 6</h2>
+            <br>
+            <p class="fs-3">Qual tipo de câmera/visão?</p>
             <br>
             <div class="field-controller">
                 {{ form.q6 }}
@@ -68,7 +288,9 @@
         </section>
 
         <section class="section" id="section7">
-            <p class="fs-3">Texto questão 7</p>
+            <h2>Pergunta 7</h2>
+            <br>
+            <p class="fs-3">Sobre dinheiro, o que você pensa em relação ao jogo?</p>
             <br>
             <div class="field-controller">
                 {{ form.q7 }}
@@ -76,7 +298,9 @@
         </section>
 
         <section class="section" id="section8">
-            <p class="fs-3">Texto questão 8</p>
+            <h2>Pergunta 8</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac viverra neque, in lacinia quam. Vestibulum vel volutpat velit, a aliquam metus. Quisque eu justo dui. Aenean lobortis, ante sit?</p>
             <br>
             <div class="field-controller">
                 {{ form.q8 }}
@@ -84,7 +308,9 @@
         </section>
 
         <section class="section" id="section9">
-            <p class="fs-3">Texto questão 9</p>
+            <h2>Pergunta 9</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium a urna eu ornare. Nunc purus nisi, tempor sit amet urna vel, varius consectetur ipsum. Suspendisse tristique diam ligula, non?</p>
             <br>
             <div class="field-controller">
                 {{ form.q9 }}
@@ -92,18 +318,20 @@
         </section>
 
         <section class="section" id="section10">
-            <p class="fs-3">Texto questão 10</p>
+            <h2>Pergunta 10</h2>
+            <br>
+            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio nibh, venenatis nec elementum a, dapibus a diam. Aenean nec nulla quis nisi interdum commodo a eget massa. Ut pretium?</p>
             <br>
             <div class="field-controller">
                 {{ form.q10 }}
             </div>
             <br>
-            <button class="auth-form-submit" type="submit">Enviar</button>
+            <button class="auth-form-submit" style="width:200px;" type="submit">Enviar</button>
     </section>
     <br><br>
 </form>
-        <button id="btnPrevious" class="auth-form-submit">Anterior</button>
-        <button id="btnNext" class="auth-form-submit">Próxima</button>
+        <button id="btnPrevious" class="paginator-button">Anterior</button>
+        <button id="btnNext" class="paginator-button">Próxima</button>
 </div>
 </div>
 {% endblock content %}

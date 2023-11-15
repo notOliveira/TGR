@@ -1,57 +1,118 @@
 .main-quiz {
-    background: url('../media/main-quiz.png');
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    text-align: center;
-    color: white;
-    background-size: cover;
-    overflow-y: scroll;
+  background: url('../media/main-quiz.png');
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  overflow-y: scroll;
 }
 
 .quiz-form {
-    margin: 0 auto;
-    width: 50%;
-    text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 .quiz-form input {
-    margin-top: 18px;
+  margin-top: 18px;
+}
+.field-controller {
+  display: flex;
+  justify-content: center;
 }
 
 .field-controller input {
-    display:block;
-    width:100%;
-    height:34px;
-    padding:6px 12px;
-    font-size:14px;
-    line-height:1.42857143;
-    color:#555;
-    background-color:#fff;
-    background-image:none;
-    border:1px solid #ccc;
-    border-radius:4px;
-    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s
-}
-    
-.form-control:focus{
-    border-color:#66afe9;
-    outline:0;
-    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+  display:block;
+  width: 80%;
+  height:40px;
+  padding:6px 12px;
+  font-size:14px;
+  line-height:1.42857143;
+  color:#555;
+  background-color:#fff;
+  background-image:none;
+  border:1px solid #ccc;
+  border-radius:4px;
+  -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s
 }
 
 .section {
-    display: none;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.paginator-button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 21px;
+  background: -webkit-linear-gradient(left, #190031, #740070, #7b00ff);
+  background: -o-linear-gradient(left, #190031, #740070, #7b00ff);
+  background: -moz-linear-gradient(left, #190031, #740070, #7b00ff);
+  background: linear-gradient(left, #190031, #740070, #7b00ff);
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+  
+.paginator-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
+  background: -webkit-linear-gradient(left, #b89517, #ffd416, #eeff00);
+  background: -o-linear-gradient(left, #b89517, #ffd416, #eeff00);
+  background: -moz-linear-gradient(left, #b89517, #ffd416, #eeff00);
+  background: linear-gradient(left, #b89517, #ffd416, #eeff00);
+  color: #000000;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+  
+.paginator-button:hover {
+  background-color: transparent;
+  color: #000000;
+  }
+  
+.paginator-button:hover:before {
+  opacity: 1;
   }
 
-  .active {
-    display: block;
+@media screen and (max-width:768px) {
+  .field-controller input {
+  width: 100%;
   }
+}

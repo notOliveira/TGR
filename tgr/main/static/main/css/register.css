@@ -40,10 +40,6 @@
     margin-top: 1rem;
   }
   
-  .hover-popup span {
-    color: rgb(200, 20, 0);
-    font-weight: 700;
-  }
   
   .hover-popup::before {
   /* This is the triangle/arrow */
