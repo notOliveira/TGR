@@ -9,6 +9,14 @@
 
         <main class="main-home">
                 <br><br><br><br><br><br><br>
+                {% if messages %}
+                        {% for message in messages %}
+                                <div class="alert alert-success alert-dismissible fade show w-100 mx-auto" role="alert">
+                                        <h5>{{ message }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                        {% endfor %}
+                {% endif %}
 
                 <div class="quote coolvetica">
                         <h1>"{{ randomQuote.phrase }}"</h1>
