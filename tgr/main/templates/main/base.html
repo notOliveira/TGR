@@ -30,7 +30,7 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark transparency">
+    <nav class="navbar navbar-expand-lg navbar-dark transparency ">
       <div class="container-fluid">
         <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'main/media/logo-white.png'%}" class="not-opacity logo-tgr"></a>
         <button 
@@ -48,9 +48,9 @@
             <ul class="navbar-tgr-ul align-middle coolvetica">
               {% if user.is_superuser %}
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <a class="text-white nav-link d-inline align-middle" href="{% url 'home' %}">
+                <span class="text-white nav-link d-inline align-middle" href="{% url 'home' %}">
                   ADMIN
-                </a>
+                </span>
               </li>
               {% endif %}
               <li class="nav-item d-inline-flex px-2 align-middle">
