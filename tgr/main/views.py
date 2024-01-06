@@ -1,10 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import Game, Quote, Platform, Genre
 from rest_framework import viewsets, permissions
 from .serializers import GameSerializer, QuoteSerializer, PlatformSerializer, GenreSerializer
 # from .forms import GameForm
 # from django.contrib.auth.mixins import LoginRequiredMixin
+
+def error_403(request):
+    context = {'status':403}
+    return render(request, 'main/errors.html', context)
 
 def home(request):
     randomQuote = Quote.objects.order_by('?').first()
@@ -21,6 +25,12 @@ def about(request):
         'footer': True
     }    
     return render(request, 'main/about.html', context)
+
+def add_game(request):
+    if not request.user.is_superuser:
+        return redirect("error_403")
+    
+    return render(request, 'main/add_game.html')
 
 class jogosListView(ListView):
     model = Game
