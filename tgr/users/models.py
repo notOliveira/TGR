@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
-from .choices import Q1_CHOICES, Q2_CHOICES, Q3_CHOICES, Q4_CHOICES, Q5_CHOICES, Q6_CHOICES, Q7_CHOICES
+from .constants import Q1_CHOICES, Q2_CHOICES, Q3_CHOICES, Q4_CHOICES, Q5_CHOICES, Q6_CHOICES, Q7_CHOICES
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

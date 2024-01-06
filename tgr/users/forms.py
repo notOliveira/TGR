@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import Profile, Quiz
 from django.contrib.auth.forms import UserCreationForm
-from .choices import Q1_CHOICES, Q2_CHOICES, Q3_CHOICES, Q4_CHOICES, Q5_CHOICES, Q6_CHOICES, Q7_CHOICES
+from .constants import Q1_CHOICES, Q2_CHOICES, Q3_CHOICES, Q4_CHOICES, Q5_CHOICES, Q6_CHOICES, Q7_CHOICES
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
