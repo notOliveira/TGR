@@ -17,6 +17,7 @@ urlpatterns = [
     path('games/', jogosListView.as_view(), name='games'),
     path('about/', views.about, name='about'),
     path('api/', include(r.urls)),
-    path('add-game/', views.add_game, name='add_game'),
-    path('403/', views.error_403, name='error_403'),
+    path('add-game/', views.add_game, name='add-game'),
+    path('403/', views.error_403, name='error-403'),
+    path('admin-panel/', views.admin_panel, name='admin-panel'),
 ]

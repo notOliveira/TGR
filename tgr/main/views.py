@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from .models import Game, Quote, Platform, Genre
 from rest_framework import viewsets, permissions
 from .serializers import GameSerializer, QuoteSerializer, PlatformSerializer, GenreSerializer
+from django.contrib.auth.decorators import user_passes_test
 # from .forms import GameForm
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -26,11 +27,15 @@ def about(request):
     }    
     return render(request, 'main/about.html', context)
 
+# Verifica se o usuário é superuser, se não for, redireciona para a página de erro 403
+@user_passes_test(lambda u: u.is_superuser, login_url='error-403')
 def add_game(request):
-    if not request.user.is_superuser:
-        return redirect("error_403")
-    
     return render(request, 'main/add_game.html')
+
+@user_passes_test(lambda u: u.is_superuser, login_url='error-403')
+def admin_panel(request):
+     return render(request, 'main/admin_panel.html')
+    
 
 class jogosListView(ListView):
     model = Game

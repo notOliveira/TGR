@@ -46,9 +46,9 @@
             <ul class="navbar-tgr-ul align-middle coolvetica">
               {% if user.is_superuser %}
               <li class="nav-item d-inline-flex px-2 align-middle">
-                <span class="text-white nav-link d-inline align-middle" href="{% url 'home' %}">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'admin-panel' %}">
                   ADMIN
-                </span>
+                </a>
               </li>
               {% endif %}
               <li class="nav-item d-inline-flex px-2 align-middle">
