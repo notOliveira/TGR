@@ -48,7 +48,7 @@ class GameCreateView(CreateView):
     model = Game
     form_class = GameForm
     template_name = 'main/add_game.html'
-    success_url = '/'
+    success_url = '/add-game'
     
 
 class CreateSuperUserPermission(permissions.BasePermission):

@@ -3,6 +3,7 @@
 {% block title %}Adicionar jogo{% endblock title %}
 {% block links %}
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/game-list.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
 {% endblock links %}
 {% block content %}
 
@@ -10,9 +11,83 @@
 
     <br>
 
-    <div class="mx-auto w-50 text-center pt-sans_bold text-white">
+    <div class="mx-auto col-4 text-center pt-sans-bold fs-3 text-white">
         <h1>Adicionar jogo</h1>
-        {{form.as_p}}
+
+        <div class="mt-5 col-12">
+            <label for="search-game">Procurar jogo pelo nome</label>
+                <input type="text" id="search-game" class="form-control">
+                <br>
+                <button class="btn btn-primary btn-lg">Procurar jogo</button>
+        </div>
+        <form method="POST" class="pt-5">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_title">Title:</label>
+                <input type="text" class="form-control" name="title" maxlength="100" required="" id="id_title">
+            </div>
+
+            <div class="mb-3">
+                <label for="id_genres">Genre:</label>
+                <select class="form-control" name="genres" required="" id="id_genres" multiple="">
+                    <option value="1">Ação</option>
+                    <option value="2">Aventura</option>
+                    <option value="3">Luta</option>
+                    <option value="4">Plataforma</option>
+                    <option value="5">Quebra-cabeça</option>
+                    <option value="6">Corrida</option>
+                    <option value="7">RPG</option>
+                    <option value="8">Tiro</option>
+                    <option value="9">Simulação</option>
+                    <option value="10">Esportes</option>
+                    <option value="11">Estratégia</option>
+                    <option value="12">MOBA</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="id_platforms">Platform:</label>
+                <select class="form-control" name="platforms" required="" id="id_platforms" multiple="">
+                    <option value="1">PC</option>
+                    <option value="2">Xbox</option>
+                    <option value="3">Playstation</option>
+                    <option value="4">Switch</option>
+                    <option value="5">All</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="id_players">Players:</label>
+                <select class="form-control" name="players" id="id_players">
+                    <option value="1" selected="">Single-player</option>
+                    <option value="2">Multiplayer</option>
+                    <option value="3">Ambos</option>
+                    <option value="4">Melhor com amigos!</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="id_synopsis">Synopsis:</label>
+                <textarea class="form-control" name="synopsis" cols="5" rows="5" required="" id="id_synopsis"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="id_connectivity">Connectivity:</label>
+                <select class="form-control" name="connectivity" id="id_connectivity">
+                    <option value="1" selected="">Offline</option>
+                    <option value="2">Online</option>
+                    <option value="3">Ambos</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="id_wiki">Wiki:</label>
+                <input type="url" class="form-control" name="wiki" maxlength="200" required="" id="id_wiki"> 
+            </div>
+            <div class="mt-5 pb-5">
+                <button class="btn btn-primary btn-lg col-6" type="submit">Salvar</button>
+            </div>
+        </form>
     </div>
 </main>
 

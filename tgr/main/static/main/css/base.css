@@ -16,8 +16,8 @@ body {
 }
 
 @font-face {
-  font-family: PT-Sans_Bold;
-  src: url("../fonts/PT-Sans_Bold.ttf");
+  font-family: PT-sans-bold;
+  src: url("../fonts/PT-sans_bold.ttf");
 }
 
 @font-face {
@@ -104,8 +104,8 @@ body {
   background-color:rgba(0, 0, 0, 0.6);
 }
 
-.pt-sans_bold {
-  font-family: PT-Sans_Bold;
+.pt-sans-bold {
+  font-family: PT-sans-bold;
 }
 
 .pt-sans {
