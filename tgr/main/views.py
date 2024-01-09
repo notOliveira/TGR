@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from .models import Game, Quote, Platform, Genre
+from .forms import GameForm
 from rest_framework import viewsets, permissions
 from .serializers import GameSerializer, QuoteSerializer, PlatformSerializer, GenreSerializer
 from django.contrib.auth.decorators import user_passes_test
@@ -37,11 +38,18 @@ def admin_panel(request):
      return render(request, 'main/admin_panel.html')
     
 
-class jogosListView(ListView):
+class GameListView(ListView):
     model = Game
     template_name = 'main/games.html'
-    context_object_name = 'games'
+    context_object_name = 'list-games'
     ordering = ['title']
+    
+class GameCreateView(CreateView):
+    model = Game
+    form_class = GameForm
+    template_name = 'main/add_game.html'
+    success_url = '/'
+    
 
 class CreateSuperUserPermission(permissions.BasePermission):
     def has_permission(self, request, view):
