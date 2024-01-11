@@ -4,6 +4,7 @@
 {% block links %}
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/game-list.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
+<script type="text/javascript" src="{% static 'main/js/add-game.js' %}"></script>
 {% endblock links %}
 {% block content %}
 
@@ -15,10 +16,10 @@
         <h1>Adicionar jogo</h1>
 
         <div class="mt-5 col-12">
-            <label for="search-game">Procurar jogo pelo nome</label>
-                <input type="text" id="search-game" class="form-control">
+            <label for="search-game">Procurar jogo pelo ID</label>
+                <input type="number" id="search-game" class="form-control">
                 <br>
-                <button class="btn btn-primary btn-lg">Procurar jogo</button>
+                <button class="btn btn-primary btn-lg" onclick="getIGDBGame()">Procurar jogo</button>
         </div>
         <form method="POST" class="pt-5">
             {% csrf_token %}

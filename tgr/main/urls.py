@@ -18,7 +18,9 @@ urlpatterns = [
     path('add-game/', GameCreateView.as_view(), name='add-game'),
     path('about/', views.about, name='about'),
     path('api/', include(r.urls)),
+    path('get-igdb-game/<int:game_id>/', views.get_igdb_game, name='get-igdb-game'),
     # path('add-game/', views.add_game, name='add-game'),
     path('403/', views.error_403, name='error-403'),
     path('admin-panel/', views.admin_panel, name='admin-panel'),
+     path('error-403/', views.error_403_api, name='error_403_api'),
 ]
