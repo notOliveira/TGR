@@ -7,51 +7,51 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
 {% endblock links %}
 {% block content %}
-    <m class="main-login">
-            <br><br><br><br><br><br>
-            <div class="message-div m-auto">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-danger alert-dismissible fade show m-auto" role="alert">
-                            {{ message }}
-                            <br>
-                            <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                <br>
-            </div>
-            <form method="POST">
-                {% csrf_token %}
-                <div class="container-login">
-                    <div class="auth-form-elements">
-                        <span class="auth-form-title">
-                            Entrar
-                        </span> 
-                        <div class="auth-form-field">
-                            <input class="auth-form-field-input" type="text" name="nickname" placeholder="Usuário">
-                            <span class="auth-form-field-icon" data-placeholder="&#xe82a;"></span>
-                        </div>
-                        <div class="auth-form-field">
-                            <input class="auth-form-field-input" type="password" name="password" placeholder="Senha" autocomplete="on">
-                            <span class="auth-form-field-icon" data-placeholder="&#xe80f;"></span>
-                        </div>
+    <main class="main-login">
+        <br><br><br><br><br><br>
+        <div class="message-div m-auto">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger alert-dismissible fade show m-auto" role="alert">
+                        {{ message }}
                         <br>
-                        <div class="auth-form-submit-container">
-                            <button class="auth-form-submit" type="submit">
-                                Login
-                            </button>
-                        </div>
+                        <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <br>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-login">
+                <div class="auth-form-elements">
+                    <span class="auth-form-title">
+                        Entrar
+                    </span> 
+                    <div class="auth-form-field">
+                        <input class="auth-form-field-input" type="text" name="nickname" placeholder="Usuário">
+                        <span class="auth-form-field-icon" data-placeholder="&#xe82a;"></span>
+                    </div>
+                    <div class="auth-form-field">
+                        <input class="auth-form-field-input" type="password" name="password" placeholder="Senha" autocomplete="on">
+                        <span class="auth-form-field-icon" data-placeholder="&#xe80f;"></span>
+                    </div>
+                    <br>
+                    <div class="auth-form-submit-container">
+                        <button class="auth-form-submit" type="submit">
+                            Login
+                        </button>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="text-center form-links">
+                        <a href="{% url 'register' %}">Não tem uma conta?</a>
                         <br>
-                        <br>
-                        <div class="text-center form-links">
-                            <a href="{% url 'register' %}">Não tem uma conta?</a>
-                            <br>
-                            <a href="{% url 'reset_password' %}">Esqueceu a senha?</a>
-                        </div>
+                        <a href="{% url 'reset_password' %}">Esqueceu a senha?</a>
                     </div>
                 </div>
-            </form>
-            <br>
-    </div>
+            </div>
+        </form>
+        <br>
+    </main>
 {% endblock content %}
