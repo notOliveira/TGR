@@ -19,13 +19,15 @@ def error_403_api(request):
     return HttpResponseForbidden('Acesso negado, você não é um administrador.')
 
 def home(request):
-    randomQuote = Quote.objects.order_by('?').first()
+    randomQuote = Quote.objects.order_by('?').first() if Quote.objects.exists() else None
+    context = {}
     
-    context = {
-        "randomQuote": randomQuote,
-        "gameTitle": randomQuote.game.title,
-        "gameWiki": randomQuote.game.wiki,
-    }    
+    if randomQuote:
+        context = {
+            "randomQuote": randomQuote,
+            "gameTitle": randomQuote.game.title,
+            "gameWiki": randomQuote.game.wiki,
+        }
     return render(request, 'main/home.html', context)
 
 def about(request):  
