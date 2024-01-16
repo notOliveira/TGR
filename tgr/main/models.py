@@ -2,9 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from .constants import PLATFORMS_OPTIONS, GENRES_OPTIONS, PLAYERS_OPTIONS, CONNECTIVITY_OPTIONS
 
-# Gêneros de jogos
-# https://en.wikipedia.org/wiki/Video_game_genre
-
 class Genre(models.Model):
     name = models.IntegerField(choices=GENRES_OPTIONS)
     

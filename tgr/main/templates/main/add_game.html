@@ -15,6 +15,8 @@
     <div class="mx-auto col-4 text-center pt-sans-bold fs-3 text-white">
         <h1>Adicionar jogo</h1>
 
+        {{form}}
+
         <div class="mt-5 col-12">
             <label for="search-game">Procurar jogo pelo ID</label>
                 <input type="number" id="search-game" class="form-control">
@@ -30,19 +32,30 @@
 
             <div class="mb-3">
                 <label for="id_genres">Genre:</label>
-                <select class="form-control" name="genres" required="" id="id_genres" multiple="">
-                    <option value="1">Ação</option>
-                    <option value="2">Aventura</option>
-                    <option value="3">Luta</option>
-                    <option value="4">Plataforma</option>
-                    <option value="5">Quebra-cabeça</option>
-                    <option value="6">Corrida</option>
-                    <option value="7">RPG</option>
-                    <option value="8">Tiro</option>
-                    <option value="9">Simulação</option>
-                    <option value="10">Esportes</option>
-                    <option value="11">Estratégia</option>
-                    <option value="12">MOBA</option>
+                <select name="genres" class="form-control" required="" id="id_genres" multiple="">
+                    <option value="1">Point-and-click</option>
+                    <option value="2">Fighting</option>
+                    <option value="3">Shooter</option>
+                    <option value="4">Music</option>
+                    <option value="5">Platform</option>
+                    <option value="6">Puzzle</option>
+                    <option value="7">Racing</option>
+                    <option value="8">Real Time Strategy (RTS)</option>
+                    <option value="9">Role-playing (RPG)</option>
+                    <option value="10">Simulator</option>
+                    <option value="11">Sport</option>
+                    <option value="12">Strategy</option>
+                    <option value="13">Turn-based strategy (TBS)</option>
+                    <option value="14">Tactical</option>
+                    <option value="15">Quiz/Trivia</option>
+                    <option value="16">Hack and slash/Beat 'em up</option>
+                    <option value="17">Pinball</option>
+                    <option value="18">Adventure</option>
+                    <option value="19">Arcade</option>
+                    <option value="20">Visual Novel</option>
+                    <option value="21">Indie</option>
+                    <option value="22">Card &amp; Board Game</option>
+                    <option value="23">MOBA</option>
                 </select>
             </div>
 
