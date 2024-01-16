@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Game, Quote, Platform, Genre
-from .constants import GENRES_OPTIONS, PLATFORMS_OPTIONS
+from .models import Game, Quote, Platform, Genre, Players
+from .constants import GENRES_OPTIONS, PLATFORMS_OPTIONS, PLAYERS_OPTIONS
 
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,4 +38,17 @@ class PlatformSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Platform
+        fields = '__all__'
+
+PLAYERS_DICT = dict(PLAYERS_OPTIONS)
+
+class PlayersSerializer(serializers.Serializer):
+    name = serializers.SerializerMethodField()
+    raw_name = serializers.IntegerField(source='name')
+    
+    def get_name(self, obj):
+        return PLAYERS_DICT.get(obj.name)
+    
+    class Meta:
+        model = Players
         fields = '__all__'

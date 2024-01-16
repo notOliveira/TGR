@@ -13,12 +13,18 @@ class Platform(models.Model):
     
     def __str__(self):
         return self.get_name_display()
+    
+class Players(models.Model):
+    name = models.IntegerField(choices=PLAYERS_OPTIONS)
+    
+    def __str__(self):
+        return self.get_name_display()
 
 class Game(models.Model):    
     title = models.CharField(max_length=100)
     genres = models.ManyToManyField(Genre)
     platforms = models.ManyToManyField(Platform)
-    players = models.IntegerField(choices=PLAYERS_OPTIONS, default=1)
+    players_mode = models.ManyToManyField(Players)
     synopsis = models.TextField()
     connectivity = models.IntegerField(choices=CONNECTIVITY_OPTIONS, default=1)
     wiki = models.URLField()

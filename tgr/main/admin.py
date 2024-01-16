@@ -1,5 +1,7 @@
+from collections.abc import Callable
+from typing import Any
 from django.contrib import admin
-from .models import Game, Quote, Genre, Platform
+from .models import Game, Quote, Genre, Platform, Players
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
@@ -8,7 +10,7 @@ class GameAdmin(admin.ModelAdmin):
         "title",
         "get_genres_name",
         "get_platforms_name",
-        "players",
+        "get_players_name",
         "connectivity",
         ]
     
@@ -25,6 +27,9 @@ class GameAdmin(admin.ModelAdmin):
         return ", ".join([genres.get_name_display() for genres in obj.genres.all()])
 
     get_genres_name.short_description = "Genres"
+    
+    def get_players_name(self, obj):
+        return ", ".join([players.get_name_display() for players in obj.players_mode.all()])
 
 @admin.register(Quote)
 class QuoteAdmin(admin.ModelAdmin):
@@ -42,4 +47,8 @@ class GenreAdmin(admin.ModelAdmin):
 
 @admin.register(Platform)
 class PlatformAdmin(admin.ModelAdmin):    
+    list_display = ["id", "name"]
+
+@admin.register(Players)
+class PlayersAdmin(admin.ModelAdmin):    
     list_display = ["id", "name"]
