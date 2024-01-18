@@ -24,36 +24,37 @@ async function getIGDBGame() {
 
         // Genres
         $.each(game.genres, function(index, genre) {
-            // Encontre a opção com o texto correspondente ao nome do modo de jogo
-            var opcao = $('#id_genres option:contains("' + genre.name + '")');
-        
-            // Se a opção existir, marque-a
+            var opcao = $('#id_genres option:contains("' + genre.name + '")').filter(function() {
+                return $(this).text() === genre.name;
+            });
+            
             if (opcao.length > 0) {
                 opcao.prop('selected', true);
             }
         });
-
+        
         // Platforms
         $.each(game.platforms, function(index, platform) {
-            // Encontre a opção com o texto correspondente ao nome do modo de jogo
-            var opcao = $('#id_platforms option:contains("' + platform.name + '")');
+            var opcao = $('#id_platforms option:contains("' + platform.name + '")').filter(function() {
+                return $(this).text() === platform.name;
+            });
+            
+            if (opcao.length > 0) {
+                opcao.prop('selected', true);
+            }
+        });
         
-            // Se a opção existir, marque-a
+        // Players mode
+        $.each(game.game_modes, function(index, gameMode) {
+            var opcao = $('#id_players_mode option:contains("' + gameMode.name + '")').filter(function() {
+                return $(this).text() === gameMode.name;
+            });
+            
             if (opcao.length > 0) {
                 opcao.prop('selected', true);
             }
         });
 
-        // Players mode
-        $.each(game.game_modes, function(index, gameMode) {
-            // Encontre a opção com o texto correspondente ao nome do modo de jogo
-            var opcao = $('#id_players_mode option:contains("' + gameMode.name + '")');
-        
-            // Se a opção existir, marque-a
-            if (opcao.length > 0) {
-                opcao.prop('selected', true);
-            }
-        });
 
         // Synopsis
         $('#id_synopsis').val(game.summary);
