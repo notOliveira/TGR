@@ -1,5 +1,10 @@
 async function getIGDBGame() {
+    $('form')[0].reset();
     const id = document.getElementById('search-game').value;
+    if (!id) {
+        alert('É necessário informar o ID do jogo!');
+        return;
+    }
     const selectGameMode = document.getElementById('id_players_mode');
     let game = null;
     try {
@@ -27,29 +32,29 @@ async function getIGDBGame() {
             var opcao = $('#id_genres option:contains("' + genre.name + '")').filter(function() {
                 return $(this).text() === genre.name;
             });
-            
+
             if (opcao.length > 0) {
                 opcao.prop('selected', true);
             }
         });
-        
+
         // Platforms
         $.each(game.platforms, function(index, platform) {
             var opcao = $('#id_platforms option:contains("' + platform.name + '")').filter(function() {
                 return $(this).text() === platform.name;
             });
-            
+
             if (opcao.length > 0) {
                 opcao.prop('selected', true);
             }
         });
-        
+
         // Players mode
         $.each(game.game_modes, function(index, gameMode) {
             var opcao = $('#id_players_mode option:contains("' + gameMode.name + '")').filter(function() {
                 return $(this).text() === gameMode.name;
             });
-            
+
             if (opcao.length > 0) {
                 opcao.prop('selected', true);
             }

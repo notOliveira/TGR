@@ -1,5 +1,3 @@
-from collections.abc import Callable
-from typing import Any
 from django.contrib import admin
 from .models import Game, Quote, Genre, Platform, Players
 
@@ -31,6 +29,8 @@ class GameAdmin(admin.ModelAdmin):
     
     def get_players_name(self, obj):
         return ", ".join([players.get_name_display() for players in obj.players_mode.all()])
+    
+    get_players_name.short_description = "Players mode"
 
 @admin.register(Quote)
 class QuoteAdmin(admin.ModelAdmin):
