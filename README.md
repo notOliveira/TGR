@@ -67,6 +67,14 @@
 \TGR\tgr> python manage.py migrate
 ```
 
+## Criando os objetos no banco de dados
+
+- Há um comando para criar os objetos no banco de dados, que deve ser executado após as migrações:
+
+```
+\TGR\tgr> python manage.py init
+```
+
 ## Iniciar o projeto (porta opcional, padrão 8000)
 
 
