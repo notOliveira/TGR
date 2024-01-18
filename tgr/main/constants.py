@@ -240,4 +240,4 @@ CONNECTIVITY_OPTIONS = [
     (1,'Offline'),
     (2,'Online'),
     (3,'Ambos')
-    ]
+]

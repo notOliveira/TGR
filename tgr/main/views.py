@@ -59,7 +59,7 @@ def get_igdb_game(request, game_id):
         'Authorization': f'Bearer {bearerToken}',
     }
 
-    payload = f"fields name, genres, platforms, player_perspectives, first_release_date, multiplayer_modes, similar_games, summary, websites, url;where id = {game_id};"
+    payload = f"fields name, genres.name, platforms.name, player_perspectives.name, game_modes.name, summary, url;where id = {game_id};"
 
     response = requests.post(igdb_url, headers=headers, data=payload)
     data = response.json()

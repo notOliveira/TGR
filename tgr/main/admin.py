@@ -11,7 +11,8 @@ class GameAdmin(admin.ModelAdmin):
         "get_genres_name",
         "get_platforms_name",
         "get_players_name",
-        "connectivity",
+        'igdb_id'
+        # "connectivity",
         ]
     
     # Mostrando no Django Admin os campos que cada objeto tem
