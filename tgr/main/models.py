@@ -20,6 +20,7 @@ class Players(models.Model):
     def __str__(self):
         return self.get_name_display()
 
+# TODO CAMPO CÂMERA
 class Game(models.Model):
     title = models.CharField(max_length=100)
     igdb_id = models.IntegerField()
