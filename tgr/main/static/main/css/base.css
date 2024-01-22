@@ -1,5 +1,9 @@
 /* Meu CSS */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #303030;
   overflow-x: hidden;

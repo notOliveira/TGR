@@ -28,7 +28,7 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark transparency ">
+    <nav class="navbar navbar-expand-lg navbar-dark transparency fixed-top">
       <div class="container-fluid">
         <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'main/media/logo-white.png'%}" class="not-opacity logo-tgr"></a>
         <button 
@@ -102,9 +102,11 @@
       </div>
     </nav>
   </header>
-  {% block content %}
-  {% comment %} Conteúdo das páginas {% endcomment %}
-  {% endblock %}
+  <div class="content">
+    {% block content %}
+    {% comment %} Conteúdo das páginas {% endcomment %}
+    {% endblock %}
+  </div>
 
   {% if footer %}
   {% comment %} Caso o footer seja true no contexto, ele aparecerá ao final da página {% endcomment %}

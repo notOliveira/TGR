@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render # redirect
 from django.views.generic import ListView, CreateView
 from .models import Game, Quote, Platform, Genre, Perspective, Players
 from .forms import GameForm
@@ -6,8 +6,8 @@ from rest_framework import viewsets, permissions
 from .serializers import GameSerializer, QuoteSerializer, PlatformSerializer, GenreSerializer, PerspectiveSerializer, PlayersSerializer
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.utils.decorators import method_decorator
-from django.http import JsonResponse, HttpResponseForbidden
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import JsonResponse # HttpResponseForbidden
+# from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
 
 def error_403(request):
@@ -15,7 +15,7 @@ def error_403(request):
     return render(request, 'main/errors.html', context)
 
 def error_403_api(request):
-    return HttpResponseForbidden('Acesso negado, você não é um administrador.')
+    return JsonResponse({'error': 'You are not authorized to access this page.'}, status=403)
 
 def home(request):
     randomQuote = Quote.objects.order_by('?').first() if Quote.objects.exists() else None
@@ -80,7 +80,6 @@ class GameListView(ListView):
     template_name = 'main/games.html'
     context_object_name = 'list-games'
     ordering = ['title']
-    permission_classes = [CreateSuperUserPermission]
     
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.all()

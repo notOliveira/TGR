@@ -32,15 +32,8 @@
   text-decoration: none;
 }
 
-.tgr-about {
-  width: 100%;
-}
 
 @media screen and (max-width:1280px) {
-  .tgr-about {
-    display: none;
-  }
-
   .about-title {
     transition: 0.3s;
     font-size: 52px;
