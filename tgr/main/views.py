@@ -63,9 +63,7 @@ def get_igdb_game(request, game_id):
     
 class CreateSuperUserPermission(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.user.is_authenticated and request.user.is_superuser:
-            return False
-        return True
+        return request.user.is_authenticated and request.user.is_superuser
 
 @method_decorator([login_required, user_passes_test(lambda u: u.is_superuser, login_url='error-403')], name='dispatch')
 class GameCreateView(CreateView):
@@ -73,13 +71,6 @@ class GameCreateView(CreateView):
     form_class = GameForm
     template_name = 'main/add_game.html'
     success_url = '/add-game'
-
-@method_decorator([login_required, user_passes_test(lambda u: u.is_superuser, login_url='error-403')], name='dispatch')
-class GameListView(ListView):
-    model = Game
-    template_name = 'main/games.html'
-    context_object_name = 'list-games'
-    ordering = ['title']
     
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.all()

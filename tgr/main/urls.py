@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from . import views
-from .views import GameListView, GameCreateView
+from .views import GameCreateView
 from rest_framework.routers import DefaultRouter
 from .views import GameViewSet, QuoteViewSet, PlatformViewSet, GenreViewSet, PerspectiveViewSet, PlayersViewSet
 
@@ -11,7 +11,7 @@ r.register(r"games", GameViewSet, basename='api-games')
 r.register(r"quotes", QuoteViewSet, basename='api-quotes')
 r.register(r"platforms", PlatformViewSet, basename='api-platforms')
 r.register(r"genres", GenreViewSet, basename='api-genres')
-r.register(r"genres", PlayersViewSet, basename='api-players')
+r.register(r"players", PlayersViewSet, basename='api-players')
 r.register(r"perspectives", PerspectiveViewSet, basename='api-perspectives')
 
 urlpatterns = [
@@ -27,6 +27,5 @@ urlpatterns = [
     path('api/v1/', include(r.urls), name='api'),
     
     # Class-based views
-    path('list-games/', GameListView.as_view(), name='list-games'),
     path('add-game/', GameCreateView.as_view(), name='add-game'),
 ]

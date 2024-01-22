@@ -19,7 +19,7 @@ class QuoteSerializer(serializers.ModelSerializer):
 
 class GenreSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
-    raw_name = serializers.IntegerField(source='name')
+    id = serializers.IntegerField()
 
     def get_name(self, obj):
         return GENRES_DICT.get(obj.name)
@@ -30,7 +30,7 @@ class GenreSerializer(serializers.ModelSerializer):
 
 class PlatformSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
-    raw_name = serializers.IntegerField(source='name')
+    id = serializers.IntegerField()
     
     def get_name(self, obj):
         return PLATFORMS_DICT.get(obj.name)
@@ -41,7 +41,7 @@ class PlatformSerializer(serializers.ModelSerializer):
 
 class PlayersSerializer(serializers.Serializer):
     name = serializers.SerializerMethodField()
-    raw_name = serializers.IntegerField(source='name')
+    id = serializers.IntegerField()
     
     def get_name(self, obj):
         return PLAYERS_DICT.get(obj.name)
@@ -52,7 +52,7 @@ class PlayersSerializer(serializers.Serializer):
 
 class PerspectiveSerializer(serializers.Serializer):
     name = serializers.SerializerMethodField()
-    raw_name = serializers.IntegerField(source='name')
+    id = serializers.IntegerField()
     
     def get_name(self, obj):
         return PERSPECTIVE_DICT.get(obj.name)
