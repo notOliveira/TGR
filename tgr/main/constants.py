@@ -237,7 +237,17 @@ PLAYERS_OPTIONS = [
 ]
     
 CONNECTIVITY_OPTIONS = [
-    (1,'Offline'),
-    (2,'Online'),
-    (3,'Ambos')
+    (1, 'Offline'),
+    (2, 'Online'),
+    (3, 'Ambos')
+]
+
+PERSPECTIVE_OPTIONS = [
+    (1, "First person"),
+    (2, "Third person"),
+    (3, "Bird view / Isometric"),
+    (4, "Side view"),
+    (5, "Text"),
+    (6, "Auditory"),
+    (7, "Virtual Reality")
 ]

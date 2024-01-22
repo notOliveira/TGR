@@ -5,7 +5,7 @@ async function getIGDBGame() {
         alert('É necessário informar o ID do jogo!');
         return;
     }
-    const selectGameMode = document.getElementById('id_players_mode');
+
     let game = null;
     try {
         const response = await fetch(
@@ -50,9 +50,20 @@ async function getIGDBGame() {
         });
 
         // Players mode
-        $.each(game.game_modes, function(index, gameMode) {
-            var opcao = $('#id_players_mode option:contains("' + gameMode.name + '")').filter(function() {
-                return $(this).text() === gameMode.name;
+        $.each(game.game_modes, function(index, players) {
+            var opcao = $('#id_players_mode option:contains("' + players.name + '")').filter(function() {
+                return $(this).text() === players.name;
+            });
+
+            if (opcao.length > 0) {
+                opcao.prop('selected', true);
+            }
+        });
+
+        // Perspectives
+        $.each(game.player_perspectives, function(index, perspectives) {
+            var opcao = $('#id_perspective option:contains("' + perspectives.name + '")').filter(function() {
+                return $(this).text() === perspectives.name;
             });
 
             if (opcao.length > 0) {
@@ -62,7 +73,7 @@ async function getIGDBGame() {
 
 
         // Synopsis
-        $('#id_synopsis').val(game.summary);
+        // $('#id_synopsis').val(game.summary);
 
         // Wiki
         $('#id_wiki').val(game.url);

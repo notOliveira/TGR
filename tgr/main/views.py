@@ -1,15 +1,14 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
-from .models import Game, Quote, Platform, Genre
+from .models import Game, Quote, Platform, Genre, Perspective, Players
 from .forms import GameForm
 from rest_framework import viewsets, permissions
-from .serializers import GameSerializer, QuoteSerializer, PlatformSerializer, GenreSerializer
-from django.contrib.auth.decorators import user_passes_test
-from django.http import JsonResponse, HttpResponse, HttpResponseForbidden
+from .serializers import GameSerializer, QuoteSerializer, PlatformSerializer, GenreSerializer, PerspectiveSerializer, PlayersSerializer
+from django.contrib.auth.decorators import user_passes_test, login_required
+from django.utils.decorators import method_decorator
+from django.http import JsonResponse, HttpResponseForbidden
+from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
-
-# from .forms import GameForm
-# from django.contrib.auth.mixins import LoginRequiredMixin
 
 def error_403(request):
     context = {'status': 403}
@@ -36,11 +35,7 @@ def about(request):
     }    
     return render(request, 'main/about.html', context)
 
-# Verifica se o usuário é superuser, se não for, redireciona para a página de erro 403
-@user_passes_test(lambda u: u.is_superuser, login_url='error-403')
-def add_game(request):
-    return render(request, 'main/add_game.html')
-
+@login_required
 @user_passes_test(lambda u: u.is_superuser, login_url='error-403')
 def admin_panel(request):
      return render(request, 'main/admin_panel.html')
@@ -59,31 +54,34 @@ def get_igdb_game(request, game_id):
         'Authorization': f'Bearer {bearerToken}',
     }
 
-    payload = f"fields name, genres.name, platforms.name, player_perspectives.name, game_modes.name, summary, url;where id = {game_id};"
+    payload = f"fields name, genres.name, platforms.name, player_perspectives.name, game_modes.name, url;where id = {game_id};"
 
     response = requests.post(igdb_url, headers=headers, data=payload)
     data = response.json()
 
     return JsonResponse(data, safe=False)
-
-class GameListView(ListView):
-    model = Game
-    template_name = 'main/games.html'
-    context_object_name = 'list-games'
-    ordering = ['title']
     
+class CreateSuperUserPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if request.user.is_authenticated and request.user.is_superuser:
+            return False
+        return True
+
+@method_decorator([login_required, user_passes_test(lambda u: u.is_superuser, login_url='error-403')], name='dispatch')
 class GameCreateView(CreateView):
     model = Game
     form_class = GameForm
     template_name = 'main/add_game.html'
     success_url = '/add-game'
-    
-class CreateSuperUserPermission(permissions.BasePermission):
-    def has_permission(self, request, view):
-        if request.method == 'POST':
-            return request.user.is_superuser
-        return True
 
+@method_decorator([login_required, user_passes_test(lambda u: u.is_superuser, login_url='error-403')], name='dispatch')
+class GameListView(ListView):
+    model = Game
+    template_name = 'main/games.html'
+    context_object_name = 'list-games'
+    ordering = ['title']
+    permission_classes = [CreateSuperUserPermission]
+    
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
@@ -102,4 +100,14 @@ class PlatformViewSet(viewsets.ModelViewSet):
 class GenreViewSet(viewsets.ModelViewSet):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
+    permission_classes = [CreateSuperUserPermission]
+    
+class PerspectiveViewSet(viewsets.ModelViewSet):
+    queryset = Perspective.objects.all()
+    serializer_class = PerspectiveSerializer
+    permission_classes = [CreateSuperUserPermission]
+
+class PlayersViewSet(viewsets.ModelViewSet):
+    queryset = Players.objects.all()
+    serializer_class = PlayersSerializer
     permission_classes = [CreateSuperUserPermission]

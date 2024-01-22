@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from main.models import Players, Platform, Genre
-from main.constants import PLAYERS_OPTIONS, PLATFORMS_OPTIONS, GENRES_OPTIONS
+from main.models import Players, Platform, Genre, Perspective
+from main.constants import PLAYERS_OPTIONS, PLATFORMS_OPTIONS, GENRES_OPTIONS, PERSPECTIVE_OPTIONS
 
 class Command(BaseCommand):
     help = 'Cria os objetos padrão do banco'
@@ -15,5 +15,8 @@ class Command(BaseCommand):
         
         # Adiciona os gêneros
         Genre.objects.bulk_create([Genre(name=value) for value, _ in GENRES_OPTIONS if not Genre.objects.filter(name=value).exists()])
+        
+        # Adiciona as perspectivas
+        Perspective.objects.bulk_create([Perspective(name=value) for value, _ in PERSPECTIVE_OPTIONS if not Perspective.objects.filter(name=value).exists()])
         
         self.stdout.write(self.style.SUCCESS('Objetos criados com sucesso.'))

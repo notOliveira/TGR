@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Game, Quote, Genre, Platform, Players
+from .models import Game, Quote, Genre, Platform, Players, Perspective
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
@@ -9,6 +9,7 @@ class GameAdmin(admin.ModelAdmin):
         "get_genres_name",
         "get_platforms_name",
         "get_players_name",
+        "get_perspective_name",
         'igdb_id'
         # "connectivity",
         ]
@@ -27,11 +28,18 @@ class GameAdmin(admin.ModelAdmin):
 
     get_genres_name.short_description = "Genres"
     
+    # Players
     def get_players_name(self, obj):
         return ", ".join([players.get_name_display() for players in obj.players_mode.all()])
     
     get_players_name.short_description = "Players mode"
-
+    
+    # Perspective
+    def get_perspective_name(self, obj):
+        return ", ".join([perspective.get_name_display() for perspective in obj.perspective.all()])
+    
+    get_perspective_name.short_description = "Perspective"
+    
 @admin.register(Quote)
 class QuoteAdmin(admin.ModelAdmin):
     list_display = ["id", "author", "game_title", "phrase"]
@@ -45,11 +53,14 @@ class QuoteAdmin(admin.ModelAdmin):
 class GenreAdmin(admin.ModelAdmin):    
     list_display = ["id", "name"]
 
-
 @admin.register(Platform)
 class PlatformAdmin(admin.ModelAdmin):    
     list_display = ["id", "name"]
 
 @admin.register(Players)
 class PlayersAdmin(admin.ModelAdmin):    
+    list_display = ["id", "name"]
+
+@admin.register(Perspective)
+class PerspectiveAdmin(admin.ModelAdmin):    
     list_display = ["id", "name"]
