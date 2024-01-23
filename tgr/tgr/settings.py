@@ -90,10 +90,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tgr',
-        'USER': 'root',
-        'PASSWORD': '20030210',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'tgr',
+        'PASSWORD': 'tgr_admin#2983#4zS!kaZ97fCp',
+        'HOST': '200.160.12.120',
+        'PORT': '51293',
         'OPTIONS': {
             'charset': 'utf8mb4',
         }
