@@ -7,10 +7,18 @@
 {% endblock links %}
 {% block content %}
 
-        <main class="main-home">
-                <br><br><br><br><br><br><br>
+        <main class="main-home pt-5">
+                {% if messages %}
+                        {% for message in messages %}
+                                <div class="alert alert-success alert-dismissible fade show w-100 mx-auto" role="alert">
+                                        <h5>{{ message }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                        {% endfor %}
+                {% endif %}
 
                 <div class="quote coolvetica">
+                        <div style="height:100px;"></div>
                         <h1>"{{ randomQuote.phrase }}"</h1>
                         <br>
                         <h3>{{ randomQuote.author }}</h3>
@@ -18,7 +26,7 @@
                         
                 </div>
                 <br><br><br>    
-                <div class="start-home fixed-bottom">
+                <div class="start-home">
                         <a href="{% url 'pre_quiz' %}">
                                 <img class="start-button mx-auto" src="{% static 'main/media/start.png'%}" id="start-hover-img">
                         <a>

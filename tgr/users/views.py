@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, ProfileUpdateForm, UsersUpdateForm, QuizForm
 from .models import Quiz
-
+from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.contrib.auth.forms import PasswordResetForm
@@ -111,11 +110,14 @@ def password_reset_request(request):
 def quiz(request):
     quiz, created = Quiz.objects.get_or_create(user=request.user)
     if request.method == 'POST':
-        print(request)
         form = QuizForm(request.POST, instance=quiz)
         if form.is_valid():
             form.save()
+            messages.success(request, "O questionário foi respondido com sucesso!")
             return redirect('home')
+        else:
+            messages.error(request, "O questionário não é válido! Responda novamente.")
+            return redirect('quiz')
     else:
         form = QuizForm(instance=quiz)
     context = {

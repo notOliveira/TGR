@@ -2,7 +2,7 @@
 
 <br>
 
-## Para inicializar a aplicação
+## Para preparar a inicialização da aplicação
 
 <br>
 
@@ -12,20 +12,9 @@
 \TGR> python -m venv <name venv>
 ```
 
-### Instalando dependências
-
-```
-\TGR> pip install -r requirements.txt
-```
-<br>
-
----
-
 <br>
 
 ## Iniciando ambiente virtual
-
-<br>
 
 #### Linux
 
@@ -53,19 +42,45 @@
 
 <br>
 
-## Criando usuário
+### Instalando dependências
+- Instale na venv preferencialmente
 
 ```
-\TGR\tgr> python manage.py createsuperuser
-\TGR\tgr> python manage.py migrate
+(venv) \TGR> pip install -r requirements.txt
 ```
+<br>
+
+---
+
+<br>
+
 
 ## Aplicando as migrações
 
 ```
-\TGR\tgr> python manage.py makemigrations
+\TGR\tgr> python manage.py makemigrations // Provavelmente não será necessário
 \TGR\tgr> python manage.py migrate
 ```
+
+<br>
+
+## Criando super usuário
+
+```
+\TGR\tgr> python manage.py createsuperuser
+```
+
+<br>
+
+## Criando os objetos no banco de dados
+
+- Há um comando para criar os objetos no banco de dados, que deve ser executado após as migrações:
+
+```
+\TGR\tgr> python manage.py init
+```
+
+<br>
 
 ## Iniciar o projeto (porta opcional, padrão 8000)
 
@@ -73,6 +88,8 @@
 ```
 \TGR\tgr> python manage.py runserver <port>
 ```
+
+<br>
 
 ## Exportando dados
 
@@ -85,6 +102,8 @@
 ```
 \TGR\tgr> python -Xutf8 .\manage.py dumpdata --output=data.json
 ```
+
+<br>
 
 #### <b>OBS:</b> Os dados estão sendo exportados com o charset adaptado para o Brasil, mas caso queria fazer alguma mudança, retire o argumento -Xutf8.
 

@@ -1,6 +1,7 @@
 .jogos-main {
   width: 100vw;
-  height: 100vh;
+  /* Tamanho deve ter o restante do tamanho do monitor */
+  height: 100vh auto;
   background: url('../media/main-login.jpg');
   background-size: cover;
   background-position: center;

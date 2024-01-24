@@ -8,12 +8,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from pathlib import Path
 import os
+from .settings_local import *
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&fuxmy&%y@7l1h0(k#%)+0&$vp5hh!4=(lcsa8c_og8dl_w6tv'
+SECRET_KEY = SECRET_KEY
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 #ALLOWED_HOSTS = ['*']
@@ -34,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -44,9 +48,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'tgr.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+    # Adicione outros domínios conforme necessário
+]
 
 TEMPLATES = [
     {
@@ -70,19 +80,7 @@ WSGI_APPLICATION = 'tgr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'notoliveira$tgr',
-        'USER': 'notoliveira',
-        'PASSWORD': 'tgrsupersecretpassword1234@#1',
-        'HOST': 'notoliveira.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        }
-    }
-}
+DATABASES = DATABASES
 
 
 # Password validation
@@ -133,11 +131,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
-# STPM Configuration
+# SMTP Configuration
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'thegamerecommender@gmail.com'
-EMAIL_HOST_PASSWORD = 'bspyiqnurjgonsga'
+EMAIL_BACKEND = EMAIL_BACKEND
+EMAIL_HOST = EMAIL_HOST
+EMAIL_PORT = EMAIL_PORT
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD

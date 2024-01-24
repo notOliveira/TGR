@@ -15,8 +15,17 @@
         <source src="{% static 'main/media/main-quiz.mp4' %}" type="video/mp4">
     </video>
     <br><br><br><br><br><br>
+
+    {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger alert-dismissible fade show w-100 mx-auto" role="alert">
+                    <h5>{{ message }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
     
-    <form method="POST" class="quiz-form w-75 mt-5" enctype="multipart/form-data">
+    <form method="POST" class="quiz-form w-75 pt-5" enctype="multipart/form-data">
         {% csrf_token %}
         <br><br>
         <section class="section active" id="section1">
@@ -24,7 +33,8 @@
             <br>
             <p class="fs-3">Em qual plataforma você joga?</p>
             <br>
-            <select name="q1" id="form_q1" class="form-control">
+            <select name="q1" id="form_q1" class="form-control" required>
+                <option disabled selected>Selecione uma opção...</option>
                 <!-- RANDOM -->
                 <option disabled style="background-color:#e0e0e0;">Aleatório</option>
                 <option value="random">Me surpreenda!</option>
@@ -103,7 +113,8 @@
             <br>
             <p class="fs-3">Qual gênero de jogo você procura?</p>
             <br>
-            <select name="q2" id="form_q2"class="form-control">
+            <select name="q2" id="form_q2" class="form-control" required>
+                <option disabled selected>Selecione uma opção...</option>
                 <!-- RANDOM -->
                 <option disabled style="background-color:#e0e0e0;">Aleatório</option>
                 <option value="random">Me surpreenda!</option>
@@ -216,7 +227,8 @@
             <p class="fs-3">Qual tipo de jogo você procura?</p>
             <br>
             <div class="field-controller">
-                <select name="q3" id="form_q3"class="form-control">
+                <select name="q3" id="form_q3" class="form-control" required>
+                    <option disabled selected>Selecione uma opção...</option>
                     <!-- RANDOM -->
                     <option disabled style="background-color:#e0e0e0;">Aleatório</option>
                     <option value="random">Me surpreenda!</option>
@@ -241,12 +253,14 @@
             <br>
             <p class="fs-3">Qual nível de dificuldade você deseja?</p>
             <br>
-            <select name="q4" id="form_q4"class="form-control">
+            <select name="q4" id="form_q4" class="form-control" required>
+                <option disabled selected>Selecione uma opção...</option>
                 <!-- RANDOM -->
                 <option disabled style="background-color:#e0e0e0;">Aleatório</option>
                 <option value="random">Me surpreenda!</option>
 
                 <!-- DIFFICULTY -->
+                <option disabled style="background-color:#e0e0e0;">Nível de dificuldade</option>
                 <option value="casual">Casual</option>
                 <option value="challenge">Desafiador</option>
             </select>
@@ -257,7 +271,8 @@
             <br>
             <p class="fs-3">Em relação aos gráficos, qual você prefere?</p>
             <br>
-            <select name="q5" id="form_q5" class="form-control">
+            <select name="q5" id="form_q5" class="form-control" required>
+                <option disabled selected>Selecione uma opção...</option>
                 <!-- RANDOM -->
                 <option disabled style="background-color:#e0e0e0;">Aleatório</option>
                 <option value="random">Me surpreenda!</option>
@@ -283,7 +298,28 @@
             <p class="fs-3">Qual tipo de câmera/visão?</p>
             <br>
             <div class="field-controller">
-                {{ form.q6 }}
+                <select name="q6" id="form_q6" class="form-control" required>
+                    <option disabled selected>Selecione uma opção...</option>
+                    <!-- RANDOM -->
+                    <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                    <option value="random">Me surpreenda!</option>
+    
+                    <!-- TERCEIRA PESSOA -->
+                    <option disabled style="background-color:#e0e0e0;">Terceira pessoa</option>
+                    <option value="third_person_fixed">Câmera fixa</option>
+                    <option value="third_person_interactive">Câmera fixa</option>
+                    <option value="third_person_companion">Câmera acompanhante</option>
+
+                    <!-- OUTROS -->
+                    <option disabled style="background-color:#e0e0e0;">Outros</option>
+                    <option value="first_person">Primeira pessoa</option>
+                    <option value="side_scrolling">Side Scrolling</option>
+                    <option value="parallax">Paralaxe</option>
+                    <option value="isometric">Isométrico</option>
+                    <option value="top_down">Top-down</option>
+                    <option value="multiplane">Multiplano (Final Fantasy Tactics / Doom)</option>
+                    <option value="static_camera">Câmera estática</option>
+                </select>
             </div>
         </section>
 
@@ -293,41 +329,29 @@
             <p class="fs-3">Sobre dinheiro, o que você pensa em relação ao jogo?</p>
             <br>
             <div class="field-controller">
-                {{ form.q7 }}
-            </div>
-        </section>
+                <select name="q7" id="form_q7" class="form-control" required>
+                    <option disabled selected>Selecione uma opção...</option>
+                    <!-- RANDOM -->
+                    <option disabled style="background-color:#e0e0e0;">Aleatório</option>
+                    <option value="random">Me surpreenda!</option>
+    
+                    <!-- JOGOS PAGOS -->
+                    <option disabled style="background-color:#e0e0e0;">Jogos pagos</option>
+                    <option value="price_4">Full-Price (R$250,00 ao infinito e além)</option>
+                    <option value="price_3">Centenas (R$100,00 a R$249,99)</option>
+                    <option value="price_2">Menos de 100 (R$20,00 a R$100,00)</option>
+                    <option value="price_1">Pechincha (até R$19,99)</option>
 
-        <section class="section" id="section8">
-            <h2>Pergunta 8</h2>
-            <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac viverra neque, in lacinia quam. Vestibulum vel volutpat velit, a aliquam metus. Quisque eu justo dui. Aenean lobortis, ante sit?</p>
-            <br>
-            <div class="field-controller">
-                {{ form.q8 }}
-            </div>
-        </section>
-
-        <section class="section" id="section9">
-            <h2>Pergunta 9</h2>
-            <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium a urna eu ornare. Nunc purus nisi, tempor sit amet urna vel, varius consectetur ipsum. Suspendisse tristique diam ligula, non?</p>
-            <br>
-            <div class="field-controller">
-                {{ form.q9 }}
-            </div>
-        </section>
-
-        <section class="section" id="section10">
-            <h2>Pergunta 10</h2>
-            <br>
-            <p class="fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio nibh, venenatis nec elementum a, dapibus a diam. Aenean nec nulla quis nisi interdum commodo a eget massa. Ut pretium?</p>
-            <br>
-            <div class="field-controller">
-                {{ form.q10 }}
+                    <!-- JOGOS GRÁTIS -->
+                    <option disabled style="background-color:#e0e0e0;">Jogos grátis</option>
+                    <option value="free_to_play">Free-to-play</option>
+                    <option value="pay_to_win">Pay-To-Win</option>
+                    <option value="pay_to_win">Pay-To-Fast</option>
+                </select>
             </div>
             <br>
             <button class="auth-form-submit" style="width:200px;" type="submit">Enviar</button>
-    </section>
+        </section>
     <br><br>
 </form>
         <button id="btnPrevious" class="paginator-button">Anterior</button>
