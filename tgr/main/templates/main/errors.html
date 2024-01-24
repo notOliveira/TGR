@@ -6,10 +6,9 @@
 {% endblock links %}
 {% block content %}
 
-<main class="jogos-main">
-
-    <br>
-
+<main class="jogos-main h-100">
+<div class="">
+    <br><br><br><br><br><br><br><br>
     <div class="mx-auto w-50 text-center pt-sans-bold text-white">
         <h1>ERROR {{status}} - {% if status == 403 %}FORBIDDEN{% elif status == 404 %}PAGE NOT FOUND{% elif status == 500 %}INTERNAL SERVER ERROR{% endif %}</h1>
         <br><br>
@@ -18,10 +17,11 @@
 
         <div class="col-12">
             <div class="col-3"></div>
-            <a href="{% url 'home' %}" class="btn btn-primary col-6">Voltar ao início</a>
+            <a href="{% url 'home' %}" class="btn btn-primary col-md-6 col-12">Voltar ao início</a>
         </div>
         
     </div>
+</div>
 </main>
 
 {% endblock content %}

@@ -8,7 +8,7 @@
 {% block content %}
 
 <main class="main-login">
-    
+    <br><br><br><br><br><br>
     <div class="pt-5 text-center pt-sans-bold text-white">
         <h1>O que você deseja fazer?</h1>
     </div>
@@ -23,14 +23,14 @@
             <div class="col-12">
                 <a href="{% url 'add-game' %}" class="btn btn-primary btn-lg col-6">Adicionar jogo</a>
             </div>
-            <br><br><br>
+            {% comment %} <br><br><br>
             <div class="col-12">
                 <button class="btn btn-primary btn-lg col-6">Editar jogo</button>
             </div>
             <br><br><br>
             <div class="col-12">
                 <button class="btn btn-primary btn-lg col-6">Excluir jogo</button>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </main>

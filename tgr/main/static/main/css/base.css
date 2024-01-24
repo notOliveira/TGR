@@ -56,6 +56,9 @@ body {
   font-family: Coolvetica;
   }
 
+.h-100 {
+  height: 100vh !important;
+}
 .navbar-nav {
   width: max-content;
 }
