@@ -146,5 +146,5 @@ GitHub.sublime-settings
 # Outros
 
 profile_pics
-settings_local.py
-settings.py
+# settings_local.py
+# settings.py

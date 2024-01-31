@@ -58,7 +58,7 @@
 ## Aplicando as migrações
 
 ```
-\TGR\tgr> python manage.py makemigrations // Provavelmente não será necessário
+\TGR\tgr> python manage.py makemigrations // Provavelmente não será necessário, porque deixarei um arquivo com a migração inicial
 \TGR\tgr> python manage.py migrate
 ```
 
@@ -91,6 +91,28 @@
 
 <br>
 
+## Importante
+- Acredito que você pode ter alguns problemas ao instalar algumas dependências, caso dê algum problema, instale manualmente as extensões com problema, já adianto alguns comandos que você pode executar abaixo:
+
+    ```
+    \TGR\tgr> python -m pip install --upgrade pip
+    \TGR\tgr> pip install django
+    \TGR\tgr> pip install django-bootstrap-form
+    \TGR\tgr> pip install mysqlclient
+
+    ```
+- Crie, pelo MySQL Workbench ou Shell uma base de dados previamente, com o nome 'tgr'.
+- Lembre se de deixar configurado o [settings_local.py](/tgr/tgr/settings_local.py). As configurações feitas nesse arquivo serão importadas no [settings.py](/tgr/tgr/settings.py).
+    ```
+    DATABASE_USER = 'root' # Troque por seu usuário na base de dados
+    DATABASE_PASSWORD = 'SUA_SENHA_AQUI' # Troque por sua senha na base de dados
+    DATABASE_HOST = 'localhost' # Caso esteja utilizando um servidor remoto, troque para o endereço do servidor
+    DATABASE_PORT = '3306' # Troque para a porta utilizada pelo servidor de banco de dados
+    ```
+- Como é um arquivo que contém informações potencialmente confidenciais, eu apenas deixarei um template e minhas reais configurações não estarão disponíveis.
+
+<br>
+
 ## Exportando dados
 
 - Exportando dados dos modelos principais (recomendado, por enquanto)
@@ -114,31 +136,3 @@
 ```
 \TGR\tgr> python manage.py loaddata data.json
 ```
-
-## Importante
-- Acredito que você pode ter alguns problemas ao instalar algumas dependências, caso dê algum problema, instale manualmente as extensões com problema, já adianto alguns comandos que você pode executar abaixo:
-
-    ```
-    \TGR\tgr> python -m pip install --upgrade pip
-    \TGR\tgr> pip install django
-    \TGR\tgr> pip install django-bootstrap-form
-    \TGR\tgr> pip install mysqlclient
-
-    ```
-- Crie, pelo MySQL Workbench ou Shell uma base de dados previamente, com o nome 'tgr'.
-- Lembre se de trocar o seu usuário no [settings.py](/tgr/tgr/settings.py)
-    ```
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'tgr',
-            'USER': 'seuUsuario', # Altere para seu usuário
-            'PASSWORD': 'suaSenha', # Altere para sua senha
-            'HOST': 'localhost',
-            'PORT': '3306',
-            'OPTIONS': {
-                'charset': 'utf8mb4',
-            }
-        }
-    }
-    ```
