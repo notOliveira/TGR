@@ -102,7 +102,7 @@
 
     ```
 - Crie, pelo MySQL Workbench ou Shell uma base de dados previamente, com o nome 'tgr'.
-- Crie um arquivo chamado [settings_local.py](/tgr/tgr/settings_local.py). As configurações feitas nesse arquivo serão importadas no [settings.py](/tgr/tgr/settings.py). O arquivo criado deve conter as seguintes informações (não foi criado previamente por problemas com o Git):
+- Crie um arquivo chamado [settings_local.py](/tgr/tgr/settings_local.py) no mesmo diretório do arquivo [settings.py](/tgr/tgr/settings.py), pois ele contém informações que serão importadas nas configurações, é de extrema importância que o arquivo seja criado. O arquivo criado deve conter as seguintes informações (não foi criado previamente por problemas com o Git):
     ```
     DATABASE_USER = 'root' # Troque por seu usuário na base de dados
     DATABASE_PASSWORD = 'SUA_SENHA_AQUI' # Troque por sua senha na base de dados
