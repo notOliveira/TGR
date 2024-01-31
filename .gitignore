@@ -1,3 +1,4 @@
+tgr/tgr/settings_local.py
 # Django #
 *.log
 *.pot
