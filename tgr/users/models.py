@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from .constants import Q1_CHOICES, Q2_CHOICES, Q3_CHOICES, Q4_CHOICES, Q5_CHOICES, Q6_CHOICES, Q7_CHOICES
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -44,16 +45,13 @@ class Profile(models.Model):
 
 class Quiz(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    q1 = models.IntegerField(default=0)
-    q2 = models.IntegerField(default=0)
-    q3 = models.IntegerField(default=0)
-    q4 = models.IntegerField(default=0)
-    q5 = models.IntegerField(default=0)
-    q6 = models.IntegerField(default=0)
-    q7 = models.IntegerField(default=0)
-    q8 = models.IntegerField(default=0)
-    q9 = models.IntegerField(default=0)
-    q10 = models.IntegerField(default=0)
+    q1 = models.CharField(max_length=25, choices=Q1_CHOICES)
+    q2 = models.CharField(max_length=25, choices=Q2_CHOICES)
+    q3 = models.CharField(max_length=25, choices=Q3_CHOICES)
+    q4 = models.CharField(max_length=25, choices=Q4_CHOICES)
+    q5 = models.CharField(max_length=25, choices=Q5_CHOICES)
+    q6 = models.CharField(max_length=25, choices=Q6_CHOICES)
+    q7 = models.CharField(max_length=25, choices=Q7_CHOICES)
     
     def __str__(self):
         return f"{self.user.username} - Quiz"

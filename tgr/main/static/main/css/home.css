@@ -10,7 +10,6 @@
 }
 
 .quote {
-  margin-top: 1vh;
   width: 100%;
 }
 
@@ -84,9 +83,6 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .quote {
-    margin-top: 6vh;
-  }
   .quote h1 {
     font-size: 40px;
   }
@@ -149,9 +145,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  .quote {
-    margin-top: -2vh;
-  }
   .quote h1 {
     font-size: 25px;
   }
@@ -165,9 +158,6 @@
 }
 
 @media screen and (max-width: 300px) {
-  .quote {
-    margin-top: -5vh;
-  }
   .quote h1 {
     font-size: 22px;
   }

@@ -20,17 +20,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/font-awesome.min.css' %}">
-    <script type="text/javascript" src="../static/main/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'main/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
     
     {% block links %}{% endblock links %}
     
-    
-
     <title>TGR - {% block title %}{% endblock %}</title>
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top transparency">
+    <nav class="navbar navbar-expand-lg navbar-dark transparency fixed-top">
       <div class="container-fluid">
         <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'main/media/logo-white.png'%}" class="not-opacity logo-tgr"></a>
         <button 
@@ -46,6 +44,13 @@
         <div class="navbar-tgr collapse navbar-collapse ml-3 overflow-auto" id="navbarNavAltMarkup">
           <div class="navbar-nav d-flex">
             <ul class="navbar-tgr-ul align-middle coolvetica">
+              {% if user.is_superuser %}
+              <li class="nav-item d-inline-flex px-2 align-middle">
+                <a class="text-white nav-link d-inline align-middle" href="{% url 'admin-panel' %}">
+                  ADMIN
+                </a>
+              </li>
+              {% endif %}
               <li class="nav-item d-inline-flex px-2 align-middle">
                 <a class="text-white nav-link d-inline align-middle" href="{% url 'home' %}">
                   <img src="{% static 'main/media/home.png'%}" class="icon-navbar">
@@ -97,9 +102,11 @@
       </div>
     </nav>
   </header>
-  {% block content %}
-  {% comment %} Conteúdo das páginas {% endcomment %}
-  {% endblock %}
+  <div class="content">
+    {% block content %}
+    {% comment %} Conteúdo das páginas {% endcomment %}
+    {% endblock %}
+  </div>
 
   {% if footer %}
   {% comment %} Caso o footer seja true no contexto, ele aparecerá ao final da página {% endcomment %}
@@ -121,13 +128,13 @@
             {% if request.path != '/pre_quiz/' %}
               <a href="{% url 'pre_quiz' %}" >Quiz</a>
             {% endif %}
-            <a href="/api">APIs</a>
+            <a href="/api/v1">APIs</a>
         </div>
 
         <br>
 
         <div class="row-footer">
-        TGR Copyright © 2023
+        TGR Copyright © 2024
         </div>
 
       </div>

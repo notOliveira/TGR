@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Adicionar jogo{% endblock title %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/game-list.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/auth-forms.css' %}">
+<script type="text/javascript" src="{% static 'main/js/add-game.js' %}"></script>
+{% endblock links %}
+{% block content %}
+
+<main class="jogos-main">
+    <br><br><br><br><br><br>
+    <div class="mx-auto col-4 text-center pt-sans-bold fs-3 text-white">
+        <h1>Adicionar jogo</h1>
+        <div class="mt-5 col-12">
+            <label for="search-game">Procurar jogo pelo ID</label>
+            <input type="number" id="search-game" class="form-control">
+            <br>
+            <button class="btn btn-primary btn-lg" onclick="getIGDBGame()">Procurar jogo</button>
+        </div>
+        <form method="POST" class="pt-5">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit" class="btn btn-primary btn-lg mt-3" id="save-game">Salvar jogo</button>
+        </form>
+    </div>
+</main>
+
+{% endblock content %}

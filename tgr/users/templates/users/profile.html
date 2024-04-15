@@ -9,7 +9,7 @@
 {% endblock %}
 {% block content %}
     <div class="main-profile">
-        <br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
         <div class="message-profile m-auto">
             {% if messages %}
                 {% for message in messages %}
@@ -57,14 +57,17 @@
                     {% comment %} CAMPO DA IMAGEM {% endcomment %}
                     <div class="profile-form-field">
                         <h4>Foto de perfil</h4>
+                        <br>
                         <div id="upload-pic">
+                            <div class="col-4 hidden-sm"></div>
+                            <label for="id_image" class="btn btn-primary col-12 col-md-4">Escolher foto</label>
                             {{ profile_form.image }}
                         </div>
                     </div>
                     <br><br>
                     <div class="auth-form-submit-container">
-                        <button class="auth-form-submit" type="submit">
-                            Editar
+                        <button class="auth-form-submit col-12 col-md-4" type="submit">
+                            Editar perfil
                         </button>
                     </div>
                 </div>
