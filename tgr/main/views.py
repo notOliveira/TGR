@@ -42,9 +42,9 @@ def admin_panel(request):
 
 @user_passes_test(lambda u: u.is_superuser, login_url='error_403_api')
 def get_igdb_game(request, game_id):
-    bearerToken = "zq1zt7ugzio7tqv43sbxfyz10huc4e"
+    bearerToken = "vaubshnr1bqarkqzsdvlvwqeuinca6"
     clientId = "lqgjwpeowsz5u90rmitxccrjw4elrl"
-    clientSecret = "qkg2wjzyv7n348o2hxiwz20lg7rk0c"
+    clientSecret = "9a8jqw1ten5vvzf6ecq5as88ierd1n"
     igdb_url = 'https://api.igdb.com/v4/games'
     
     headers = {

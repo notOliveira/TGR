@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     # Adicionados por mim
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
-    'bootstrapform',
+    # 'bootstrapform',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
